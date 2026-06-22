@@ -616,126 +616,194 @@ window.ETM_BANK = {
       "difficulte": 1
     },
 
-    /* ---------- MÉCANIQUE — LOT D'ESSAI (20 questions originales, ancrées sur la réglementation 2026) ---------- */
+    /* ---------- MÉCANIQUE — LOT D'ESSAI (20 questions, réparties comme à l'examen : réponse unique majoritaire ; 2 à 4 propositions) ---------- */
     {
       "id": "MEC-0010",
       "theme": "mecanique",
-      "enonce": "Depuis le 15 avril 2024, concernant le contrôle technique des deux-roues motorisés :",
+      "enonce": "Depuis le 15 avril 2024, le contrôle technique des deux-roues motorisés :",
       "media": null,
       "propositions": [
-        { "id": "a", "texte": "Il est obligatoire et doit être renouvelé tous les 3 ans." },
-        { "id": "b", "texte": "Il ne concerne que les motos de plus de 125 cm³." },
-        { "id": "c", "texte": "Les cyclomoteurs de 50 cm³ y sont également soumis." },
-        { "id": "d", "texte": "Rouler sans contrôle technique valide expose à une amende." }
+        { "id": "a", "texte": "Est obligatoire et se renouvelle tous les 3 ans." },
+        { "id": "b", "texte": "Ne concerne que les motos de plus de 125 cm³." },
+        { "id": "c", "texte": "Concerne aussi les cyclomoteurs de 50 cm³." },
+        { "id": "d", "texte": "Doit être valide, sous peine d'amende." }
       ],
       "bonnesReponses": ["a", "c", "d"],
-      "explication": "Le contrôle technique des deux-roues est obligatoire depuis le 15 avril 2024, tous les 3 ans (A), pour toutes les cylindrées, y compris les 50 cm³ (C). Rouler sans contrôle valide est sanctionné par une amende (D, 135 €). Il ne se limite donc pas aux grosses cylindrées (B).",
+      "explication": "Le contrôle technique est obligatoire depuis le 15 avril 2024, tous les 3 ans (A), pour toutes les cylindrées y compris les 50 cm³ (C), et rouler sans contrôle valide est sanctionné (D, 135 €). Il ne se limite pas aux grosses cylindrées (B).",
       "difficulte": 2
     },
     {
       "id": "MEC-0011",
       "theme": "mecanique",
-      "enonce": "À quelle fréquence votre moto de tourisme doit-elle passer le contrôle technique ?",
+      "enonce": "Quelle est la profondeur minimale légale des sculptures d'un pneu de moto ?",
       "media": null,
       "propositions": [
-        { "id": "a", "texte": "Tous les ans." },
-        { "id": "b", "texte": "Tous les 3 ans." },
-        { "id": "c", "texte": "Une seule fois, lors de l'achat." }
+        { "id": "a", "texte": "1 mm." },
+        { "id": "b", "texte": "1,6 mm." },
+        { "id": "c", "texte": "4 mm." },
+        { "id": "d", "texte": "Il n'existe pas de limite légale." }
       ],
-      "bonnesReponses": ["b"],
-      "explication": "La périodicité du contrôle technique moto est de 3 ans (B). Un contrôle annuel (A) ou une visite unique à l'achat (C) ne correspondent pas à la réglementation ; la périodicité de 5 ans est réservée aux véhicules de collection.",
-      "difficulte": 1
+      "bonnesReponses": ["a"],
+      "explication": "Pour une moto, la limite légale est de 1 mm (A). Les 1,6 mm (B) concernent la voiture ; 4 mm (C) est une recommandation de sécurité, pas la limite légale ; et une limite légale existe bien (D faux).",
+      "difficulte": 2
     },
     {
       "id": "MEC-0012",
       "theme": "mecanique",
-      "enonce": "Quelle est la profondeur minimale légale des sculptures d'un pneu de moto ?",
+      "enonce": "En général, à quelle fréquence remplace-t-on le liquide de frein ?",
       "media": null,
       "propositions": [
-        { "id": "a", "texte": "1,6 mm." },
-        { "id": "b", "texte": "1 mm." },
-        { "id": "c", "texte": "Aucune limite tant que le pneu n'est pas crevé." }
+        { "id": "a", "texte": "Jamais, il dure indéfiniment." },
+        { "id": "b", "texte": "À chaque changement de pneus." },
+        { "id": "c", "texte": "Environ tous les 2 ans." }
       ],
-      "bonnesReponses": ["b"],
-      "explication": "Pour une moto, la profondeur minimale légale est de 1 mm (B). Les 1,6 mm (A) concernent les voitures. Un pneu trop usé reste dangereux et verbalisable même sans crevaison (C).",
+      "bonnesReponses": ["c"],
+      "explication": "Le liquide de frein absorbe l'humidité avec le temps, ce qui réduit l'efficacité du freinage : on le remplace en moyenne tous les 2 ans (C). Il ne dure pas indéfiniment (A) et son remplacement n'est pas lié aux pneus (B).",
       "difficulte": 2
     },
     {
       "id": "MEC-0013",
       "theme": "mecanique",
-      "enonce": "Le sigle « TWI » ou un petit triangle figurant sur le flanc d'un pneu :",
+      "enonce": "Quand faut-il vérifier la pression des pneus ?",
       "media": null,
       "propositions": [
-        { "id": "a", "texte": "Aide à repérer les témoins d'usure logés dans les rainures." },
-        { "id": "b", "texte": "Indique la pression de gonflage maximale." },
-        { "id": "c", "texte": "Permet de voir si le pneu atteint sa limite d'usure." },
-        { "id": "d", "texte": "Indique le sens de rotation du pneu." }
+        { "id": "a", "texte": "À chaud, juste après un long trajet." },
+        { "id": "b", "texte": "À froid, avant de rouler." },
+        { "id": "c", "texte": "Le moment n'a aucune importance." }
       ],
-      "bonnesReponses": ["a", "c"],
-      "explication": "Le marquage TWI (Tread Wear Indicator) ou un triangle pointe vers les témoins d'usure placés dans les rainures (A, C) : quand la gomme arrive à leur niveau, le pneu est à la limite. La pression (B) et le sens de rotation, signalé par une flèche (D), sont d'autres marquages.",
+      "bonnesReponses": ["b"],
+      "explication": "On contrôle la pression à froid (B) : en roulant, l'air chauffe et la valeur augmente, ce qui fausse la mesure (A). La pression conditionne la tenue de route et l'usure, donc le moment compte (C).",
       "difficulte": 2
     },
     {
       "id": "MEC-0014",
       "theme": "mecanique",
-      "enonce": "Vous circulez avec un pneu lisse, sous la limite légale d'usure :",
+      "enonce": "Pour freiner efficacement à moto :",
       "media": null,
       "propositions": [
-        { "id": "a", "texte": "C'est sans conséquence si vous roulez doucement." },
-        { "id": "b", "texte": "Vous risquez une amende et l'immobilisation du véhicule." },
-        { "id": "c", "texte": "L'adhérence, surtout sur sol mouillé, est fortement réduite." }
+        { "id": "a", "texte": "On utilise conjointement le frein avant et le frein arrière." },
+        { "id": "b", "texte": "On n'utilise que le frein arrière pour ne pas chuter." },
+        { "id": "c", "texte": "Le frein avant fournit l'essentiel de la puissance de freinage." }
       ],
-      "bonnesReponses": ["b", "c"],
-      "explication": "Un pneu lisse expose à une amende et à l'immobilisation (B) et perd son adhérence, en particulier sur le mouillé où il n'évacue plus l'eau (C). Rouler lentement ne supprime ni le danger ni l'infraction (A).",
-      "difficulte": 1
+      "bonnesReponses": ["a", "c"],
+      "explication": "Un freinage efficace combine les deux freins (A) ; avec le transfert de charge vers l'avant, le frein avant fournit la plus grande part de la décélération (C). Se limiter au frein arrière (B) allonge fortement la distance d'arrêt.",
+      "difficulte": 2
     },
     {
       "id": "MEC-0015",
       "theme": "mecanique",
-      "enonce": "Concernant le liquide de frein de votre moto :",
+      "enonce": "Rouler avec un pneu lisse, sous la limite légale d'usure :",
       "media": null,
       "propositions": [
-        { "id": "a", "texte": "Il absorbe l'humidité avec le temps, ce qui réduit l'efficacité du freinage." },
-        { "id": "b", "texte": "Il se change en général tous les 2 ans environ." },
-        { "id": "c", "texte": "Il n'a jamais besoin d'être remplacé." },
-        { "id": "d", "texte": "Son niveau se vérifie au réservoir prévu à cet effet." }
+        { "id": "a", "texte": "N'a aucune importance si l'on roule lentement." },
+        { "id": "b", "texte": "Expose à une amende et à l'immobilisation du véhicule." },
+        { "id": "c", "texte": "Réduit fortement l'adhérence, surtout sur sol mouillé." },
+        { "id": "d", "texte": "Améliore l'adhérence sur route sèche." }
       ],
-      "bonnesReponses": ["a", "b", "d"],
-      "explication": "Le liquide de frein est hygroscopique : il capte l'humidité, son point d'ébullition baisse et le freinage perd en efficacité (A), d'où un remplacement périodique, en moyenne tous les 2 ans (B). On contrôle son niveau au bocal dédié (D). Affirmer qu'il ne se change jamais (C) est faux et dangereux.",
-      "difficulte": 2
+      "bonnesReponses": ["b", "c"],
+      "explication": "Un pneu lisse expose à une sanction et à l'immobilisation (B) et perd son adhérence, surtout sur le mouillé où il n'évacue plus l'eau (C). Rouler lentement ne supprime ni le danger ni l'infraction (A), et un pneu usé n'améliore pas l'adhérence (D).",
+      "difficulte": 1
     },
     {
       "id": "MEC-0016",
       "theme": "mecanique",
-      "enonce": "Les plaquettes de frein d'une moto :",
+      "enonce": "Moteur tournant, le voyant rouge de pression d'huile reste allumé. Vous devez :",
       "media": null,
       "propositions": [
-        { "id": "a", "texte": "Durent toute la vie de la moto." },
-        { "id": "b", "texte": "S'usent normalement avec l'usage et se contrôlent régulièrement." },
-        { "id": "c", "texte": "Doivent être remplacées lorsque la garniture devient trop fine." }
+        { "id": "a", "texte": "Continuer, ce voyant est seulement indicatif." },
+        { "id": "b", "texte": "Couper le moteur et vérifier avant de rouler." },
+        { "id": "c", "texte": "Accélérer pour faire monter la pression." }
       ],
-      "bonnesReponses": ["b", "c"],
-      "explication": "Les plaquettes sont des pièces d'usure : elles se vérifient régulièrement (B) et se remplacent quand la garniture devient trop fine (C), pour garder un freinage efficace. Elles ne durent pas toute la vie de la moto (A).",
-      "difficulte": 1
+      "bonnesReponses": ["b"],
+      "explication": "Ce voyant signale un défaut de lubrification : on coupe le moteur et on vérifie (niveau d'huile, fuite) avant tout déplacement (B). L'ignorer (A) ou accélérer (C) peut détruire le moteur.",
+      "difficulte": 2
     },
     {
       "id": "MEC-0017",
       "theme": "mecanique",
-      "enonce": "Pour freiner efficacement à moto :",
+      "enonce": "Le niveau de liquide de refroidissement se vérifie :",
       "media": null,
       "propositions": [
-        { "id": "a", "texte": "Il faut utiliser conjointement le frein avant et le frein arrière." },
-        { "id": "b", "texte": "Il faut n'utiliser que le frein arrière pour ne pas chuter." },
-        { "id": "c", "texte": "Le frein avant assure l'essentiel de la puissance de freinage." }
+        { "id": "a", "texte": "Moteur froid." },
+        { "id": "b", "texte": "Moteur très chaud, en ouvrant le circuit." },
+        { "id": "c", "texte": "Uniquement par un professionnel." }
       ],
-      "bonnesReponses": ["a", "c"],
-      "explication": "Un freinage efficace combine les deux freins (A) ; sous l'effet du transfert de charge vers l'avant, c'est le frein avant qui fournit la plus grande part de la décélération (C). Se limiter au frein arrière (B) allonge fortement la distance d'arrêt.",
+      "bonnesReponses": ["a"],
+      "explication": "On vérifie moteur froid (A). Ouvrir le circuit sous pression à chaud peut projeter du liquide brûlant (B). C'est un contrôle simple, réalisable soi-même (C).",
       "difficulte": 2
     },
     {
       "id": "MEC-0018",
       "theme": "mecanique",
-      "enonce": "Le système ABS sur une moto :",
+      "enonce": "De jour, sur la route, votre moto doit circuler :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Feux de croisement allumés." },
+        { "id": "b", "texte": "Feux éteints si la visibilité est bonne." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Les deux-roues motorisés doivent rouler de jour avec les feux de croisement allumés (A), pour être mieux vus des autres usagers. Rouler feux éteints le jour (B) est interdit et sanctionné.",
+      "difficulte": 1
+    },
+    {
+      "id": "MEC-0019",
+      "theme": "mecanique",
+      "enonce": "Un pneu sur-gonflé (pression trop élevée) :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "S'use surtout en son centre." },
+        { "id": "b", "texte": "S'use surtout sur les bords." },
+        { "id": "c", "texte": "Améliore l'adhérence." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Trop gonflé, le pneu bombe et porte surtout au centre : l'usure y est plus rapide (A). L'usure sur les bords (B) est plutôt le signe d'un sous-gonflage. Moins de gomme au sol réduit l'adhérence, ne l'améliore pas (C).",
+      "difficulte": 2
+    },
+    {
+      "id": "MEC-0020",
+      "theme": "mecanique",
+      "enonce": "Concernant les rétroviseurs obligatoires sur une moto :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Aucun n'est obligatoire." },
+        { "id": "b", "texte": "Quatre rétroviseurs sont exigés." },
+        { "id": "c", "texte": "Au moins un, à gauche, est obligatoire." }
+      ],
+      "bonnesReponses": ["c"],
+      "explication": "La réglementation impose au minimum un rétroviseur, à gauche (C) ; les motos récentes en ont deux. En avoir zéro (A) est interdit, et quatre (B) n'est pas exigé. Les rétros se complètent par le contrôle de l'angle mort.",
+      "difficulte": 1
+    },
+    {
+      "id": "MEC-0021",
+      "theme": "mecanique",
+      "enonce": "Sur la plupart des motos modernes, la béquille latérale :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Est reliée à un coupe-circuit (le moteur se coupe ou ne démarre pas si elle est baissée, une vitesse engagée)." },
+        { "id": "b", "texte": "Peut rester baissée en roulant sans aucun risque." },
+        { "id": "c", "texte": "Doit toujours être relevée avant de partir." }
+      ],
+      "bonnesReponses": ["a", "c"],
+      "explication": "Un contacteur de béquille coupe le moteur ou empêche le démarrage si la béquille est baissée avec une vitesse engagée (A) ; on la relève donc toujours avant de partir (C). La laisser baissée en roulant (B) est dangereux, surtout en virage à gauche.",
+      "difficulte": 2
+    },
+    {
+      "id": "MEC-0022",
+      "theme": "mecanique",
+      "enonce": "L'avertisseur sonore (klaxon) d'une moto :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Est facultatif." },
+        { "id": "b", "texte": "Est obligatoire, homologué et en état de marche." }
+      ],
+      "bonnesReponses": ["b"],
+      "explication": "Le klaxon est un équipement obligatoire, homologué et fonctionnel (B) ; il n'est pas facultatif (A). Son usage est réservé à l'avertissement d'un danger.",
+      "difficulte": 1
+    },
+    {
+      "id": "MEC-0023",
+      "theme": "mecanique",
+      "enonce": "Le système ABS d'une moto :",
       "media": null,
       "propositions": [
         { "id": "a", "texte": "Permet de freiner deux fois plus court sur le verglas en toutes circonstances." },
@@ -743,121 +811,51 @@ window.ETM_BANK = {
         { "id": "c", "texte": "Aide à conserver le contrôle de la trajectoire en freinage d'urgence." }
       ],
       "bonnesReponses": ["b", "c"],
-      "explication": "L'ABS empêche les roues de se bloquer (B) et aide ainsi à garder la maîtrise de la direction lors d'un freinage d'urgence (C). Il n'annule pas les lois physiques : il ne garantit pas une distance d'arrêt « deux fois plus courte », surtout sur surface très glissante (A).",
+      "explication": "L'ABS empêche les roues de se bloquer (B) et aide à conserver la maîtrise de la direction en freinage d'urgence (C). Il n'annule pas les lois physiques : pas de distance « deux fois plus courte » sur surface très glissante (A).",
       "difficulte": 2
-    },
-    {
-      "id": "MEC-0019",
-      "theme": "mecanique",
-      "enonce": "La pression des pneus doit se vérifier :",
-      "media": null,
-      "propositions": [
-        { "id": "a", "texte": "À froid, avant de rouler (ou après un très court trajet)." },
-        { "id": "b", "texte": "Uniquement quand le pneu est visiblement dégonflé." },
-        { "id": "c", "texte": "Régulièrement, car une mauvaise pression dégrade la tenue de route et l'usure." }
-      ],
-      "bonnesReponses": ["a", "c"],
-      "explication": "On contrôle la pression à froid (A), car en roulant l'air chauffe et la valeur augmente, ce qui fausse la mesure ; et on le fait régulièrement (C), sous-gonflage comme sur-gonflage nuisant à la tenue de route et à l'usure. Attendre que le pneu paraisse dégonflé (B) est trop tard.",
-      "difficulte": 2
-    },
-    {
-      "id": "MEC-0020",
-      "theme": "mecanique",
-      "enonce": "Un pneu sur-gonflé (pression trop élevée) :",
-      "media": null,
-      "propositions": [
-        { "id": "a", "texte": "Améliore toujours l'adhérence." },
-        { "id": "b", "texte": "S'use davantage en son centre." },
-        { "id": "c", "texte": "Réduit la surface de gomme en contact avec la route." }
-      ],
-      "bonnesReponses": ["b", "c"],
-      "explication": "Trop gonflé, le pneu bombe : il porte surtout au centre (usure centrale, B) et pose moins de gomme au sol (C), ce qui réduit l'adhérence au lieu de l'améliorer (A).",
-      "difficulte": 2
-    },
-    {
-      "id": "MEC-0021",
-      "theme": "mecanique",
-      "enonce": "L'entretien de la chaîne de transmission impose de :",
-      "media": null,
-      "propositions": [
-        { "id": "a", "texte": "La maintenir correctement tendue, ni trop lâche ni trop tendue." },
-        { "id": "b", "texte": "La graisser régulièrement, par exemple après avoir roulé sous la pluie." },
-        { "id": "c", "texte": "Ne jamais y toucher entre deux révisions." },
-        { "id": "d", "texte": "Vérifier son état (maillons, usure) avant les longs trajets." }
-      ],
-      "bonnesReponses": ["a", "b", "d"],
-      "explication": "Une chaîne se règle à la bonne tension (A), se graisse régulièrement, notamment après la pluie ou un lavage (B), et se contrôle avant un long trajet (D). La négliger (C) use prématurément le kit chaîne et peut devenir dangereux.",
-      "difficulte": 1
-    },
-    {
-      "id": "MEC-0022",
-      "theme": "mecanique",
-      "enonce": "De jour, sur la route, votre moto :",
-      "media": null,
-      "propositions": [
-        { "id": "a", "texte": "Doit circuler avec les feux de croisement allumés." },
-        { "id": "b", "texte": "Peut rouler tous feux éteints si la visibilité est bonne." },
-        { "id": "c", "texte": "Est ainsi plus facilement vue des autres usagers." }
-      ],
-      "bonnesReponses": ["a", "c"],
-      "explication": "Les deux-roues motorisés doivent rouler de jour avec les feux de croisement allumés (A), ce qui améliore leur visibilité vis-à-vis des autres usagers (C). Rouler feux éteints le jour (B) est interdit et sanctionné.",
-      "difficulte": 1
-    },
-    {
-      "id": "MEC-0023",
-      "theme": "mecanique",
-      "enonce": "Concernant les rétroviseurs d'une moto :",
-      "media": null,
-      "propositions": [
-        { "id": "a", "texte": "Ils sont facultatifs si l'on pense à tourner la tête." },
-        { "id": "b", "texte": "Au moins un rétroviseur, à gauche, est obligatoire." },
-        { "id": "c", "texte": "Les motos récentes en comportent deux, un de chaque côté." }
-      ],
-      "bonnesReponses": ["b", "c"],
-      "explication": "La réglementation impose au minimum un rétroviseur gauche (B) ; les motos récentes en ont deux, un de chaque côté (C). Ils ne sont pas facultatifs (A) : le contrôle aux rétroviseurs est essentiel, complété par le contrôle de l'angle mort.",
-      "difficulte": 1
     },
     {
       "id": "MEC-0024",
       "theme": "mecanique",
-      "enonce": "L'avertisseur sonore (klaxon) de la moto :",
+      "enonce": "À quelle fréquence une moto de tourisme passe-t-elle le contrôle technique ?",
       "media": null,
       "propositions": [
-        { "id": "a", "texte": "Est un équipement obligatoire, homologué et en état de marche." },
-        { "id": "b", "texte": "Peut être retiré pour alléger la moto." },
-        { "id": "c", "texte": "Sert à signaler un danger, pas à manifester son agacement." }
+        { "id": "a", "texte": "Tous les ans." },
+        { "id": "b", "texte": "Tous les 5 ans." },
+        { "id": "c", "texte": "Tous les 3 ans." }
       ],
-      "bonnesReponses": ["a", "c"],
-      "explication": "Le klaxon est obligatoire, homologué et fonctionnel (A). On ne peut pas le supprimer (B). Son usage est réservé à l'avertissement d'un danger immédiat (C), non à l'expression de l'énervement.",
+      "bonnesReponses": ["c"],
+      "explication": "La périodicité du contrôle technique moto est de 3 ans (C). Le contrôle annuel (A) n'existe pas pour ces véhicules, et les 5 ans (B) sont réservés aux véhicules de collection.",
       "difficulte": 1
     },
     {
       "id": "MEC-0025",
       "theme": "mecanique",
-      "enonce": "Pour vérifier le niveau de liquide de refroidissement :",
+      "enonce": "Pour l'entretien de la chaîne de transmission, il faut surtout :",
       "media": null,
       "propositions": [
-        { "id": "a", "texte": "On contrôle moteur froid." },
-        { "id": "b", "texte": "On ouvre toujours le circuit à chaud pour mieux voir." },
-        { "id": "c", "texte": "Il ne faut pas ouvrir le bouchon du circuit quand le moteur est très chaud." }
+        { "id": "a", "texte": "Ne jamais y toucher entre deux révisions." },
+        { "id": "b", "texte": "La maintenir bien tendue et la graisser régulièrement." },
+        { "id": "c", "texte": "La graisser une seule fois, à l'achat de la moto." }
       ],
-      "bonnesReponses": ["a", "c"],
-      "explication": "Le niveau se vérifie moteur froid (A). Ouvrir le circuit sous pression à chaud peut projeter du liquide brûlant : il ne faut pas le faire (C), contrairement à ce qu'affirme la proposition B. Patientez que le moteur refroidisse.",
-      "difficulte": 2
+      "bonnesReponses": ["b"],
+      "explication": "Une chaîne se règle à la bonne tension et se graisse régulièrement, par exemple après la pluie ou un lavage (B). La négliger (A) ou ne la graisser qu'une fois (C) use prématurément le kit chaîne et devient dangereux.",
+      "difficulte": 1
     },
     {
       "id": "MEC-0026",
       "theme": "mecanique",
-      "enonce": "Sur la plupart des motos modernes, la béquille latérale :",
+      "enonce": "Les plaquettes de frein d'une moto :",
       "media": null,
       "propositions": [
-        { "id": "a", "texte": "Est reliée à un coupe-circuit qui empêche de démarrer (ou coupe le moteur) si elle est baissée, une vitesse engagée." },
-        { "id": "b", "texte": "Peut rester baissée en roulant sans aucun risque." },
-        { "id": "c", "texte": "Doit toujours être relevée avant de partir." }
+        { "id": "a", "texte": "Durent toute la vie de la moto." },
+        { "id": "b", "texte": "S'usent avec l'usage et se contrôlent régulièrement." },
+        { "id": "c", "texte": "Se remplacent quand la garniture devient trop fine." },
+        { "id": "d", "texte": "Ne concernent pas la sécurité." }
       ],
-      "bonnesReponses": ["a", "c"],
-      "explication": "Un contacteur de béquille coupe le moteur ou empêche le démarrage si la béquille est baissée avec une vitesse engagée (A) ; on la relève donc toujours avant de partir (C). La laisser baissée en roulant (B) est dangereux, notamment en virage à gauche.",
-      "difficulte": 2
+      "bonnesReponses": ["b", "c"],
+      "explication": "Les plaquettes sont des pièces d'usure : on les contrôle régulièrement (B) et on les remplace quand la garniture est trop fine (C). Elles ne durent pas toute la vie de la moto (A) et sont essentielles à la sécurité (D faux).",
+      "difficulte": 1
     },
     {
       "id": "MEC-0027",
@@ -871,21 +869,21 @@ window.ETM_BANK = {
         { "id": "d", "texte": "Le liquide de refroidissement, si la moto en est équipée." }
       ],
       "bonnesReponses": ["a", "b", "d"],
-      "explication": "Les niveaux essentiels sont l'huile moteur (A), le liquide de frein (B) et, sur les motos à refroidissement liquide, le liquide de refroidissement (D). « Le niveau de l'autoradio » (C) n'a aucun sens mécanique : c'est un distracteur.",
+      "explication": "Les niveaux essentiels sont l'huile moteur (A), le liquide de frein (B) et, sur les motos à refroidissement liquide, le liquide de refroidissement (D). « Le niveau de l'autoradio » (C) n'a aucun sens mécanique.",
       "difficulte": 1
     },
     {
       "id": "MEC-0028",
       "theme": "mecanique",
-      "enonce": "Moteur tournant, un voyant rouge de pression d'huile reste allumé :",
+      "enonce": "Sur le flanc d'un pneu, le sigle « TWI » (ou un petit triangle) :",
       "media": null,
       "propositions": [
-        { "id": "a", "texte": "On peut l'ignorer, ce voyant n'est qu'indicatif." },
-        { "id": "b", "texte": "C'est une alerte : il ne faut pas rouler ainsi." },
-        { "id": "c", "texte": "Il faut couper le moteur et vérifier (niveau d'huile, anomalie)." }
+        { "id": "a", "texte": "Aide à repérer les témoins d'usure." },
+        { "id": "b", "texte": "Indique la pression de gonflage maximale." },
+        { "id": "c", "texte": "Donne la date exacte de fabrication." }
       ],
-      "bonnesReponses": ["b", "c"],
-      "explication": "Un témoin de pression d'huile resté allumé moteur tournant signale un défaut de lubrification : c'est une alerte, on ne roule pas ainsi (B) et on coupe le moteur pour vérifier (C). L'ignorer (A) peut détruire le moteur.",
+      "bonnesReponses": ["a"],
+      "explication": "Le marquage TWI (Tread Wear Indicator), ou un triangle, pointe vers les témoins d'usure logés dans les rainures (A) : quand la gomme arrive à leur niveau, le pneu est à la limite. La pression (B) et la date de fabrication (C) sont d'autres marquages.",
       "difficulte": 2
     },
     {

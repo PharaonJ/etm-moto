@@ -430,7 +430,7 @@
           '</div>' + timer +
         '</div>' +
         '<p class="enonce">'+esc(q.enonce)+'</p>' +
-        '<p class="hint">Une ou plusieurs réponses possibles.</p>' +
+        '<p class="hint">'+(q.bonnesReponses.length === 1 ? "Une réponse" : "Plusieurs réponses")+'</p>' +
         '<div class="props" id="props">'+propsHtml+'</div>' +
         '<div class="explain" id="explain" hidden></div>' +
         '<div class="actions">' +
