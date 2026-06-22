@@ -17,9 +17,9 @@
 
 window.ETM_BANK = {
   "meta": {
-    "version": "2026.2",
-    "total": 85,
-    "note": "85 questions originales. Lot d'essai mécanique ajouté (MEC-0010 à MEC-0029), ancré sur la réglementation 2026 (contrôle technique, usure pneus, équipements). Montée en volume à poursuivre."
+    "version": "2026.3",
+    "total": 123,
+    "note": "123 questions originales, tous thèmes. Format examen 2023 (indication Une/Plusieurs réponses). App compatible images via le champ 'media' (mettre une URL d'image au lieu de null). Montée en volume à poursuivre."
   },
 
   "themes": {
@@ -1313,6 +1313,508 @@ window.ETM_BANK = {
       "bonnesReponses": ["a", "b", "c"],
       "explication": "Dans une ZFE, le deux-roues doit afficher sa vignette Crit'Air (A), respecter les restrictions locales (B) et peut être contrôlé (C). Les motos peuvent être concernées (D faux).",
       "difficulte": 2
+    },
+
+    /* ===== LOT PROPOSÉ PAR L'UTILISATEUR — vérifié, reformulé, réponses sourcées (2026) ===== */
+    {
+      "id": "MEC-0030",
+      "theme": "mecanique",
+      "enonce": "On peut contrôler de façon sommaire le voile (voilage) d'un disque de frein en approchant un repère fixe, comme un stylo, et en faisant tourner la roue :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "En plaçant un repère fixe (stylo, tournevis) près du disque et en tournant la roue, on voit si l'écart varie : c'est un contrôle sommaire du voilage (A). Le contrôle précis se fait au comparateur, mais ce repérage visuel reste utile (B faux).",
+      "difficulte": 2
+    },
+    {
+      "id": "MEC-0031",
+      "theme": "mecanique",
+      "enonce": "Les dents de la couronne de transmission sont usées. Je remplace :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Uniquement la couronne." },
+        { "id": "b", "texte": "La couronne et la chaîne seulement." },
+        { "id": "c", "texte": "L'ensemble du kit chaîne (chaîne, couronne et pignon)." }
+      ],
+      "bonnesReponses": ["c"],
+      "explication": "Chaîne, couronne et pignon s'usent ensemble : on remplace tout le kit chaîne (C). Ne changer que la couronne (A) ou couronne + chaîne sans le pignon (B) use prématurément les pièces neuves.",
+      "difficulte": 2
+    },
+    {
+      "id": "MEC-0032",
+      "theme": "mecanique",
+      "enonce": "Un pneu de type « sport » possède généralement une gomme :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Tendre." },
+        { "id": "b", "texte": "Dure." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Un pneu sport a une gomme plus tendre (A) : meilleure accroche, mais usure plus rapide. Une gomme dure (B) dure plus longtemps mais accroche moins (orientation longévité/routière).",
+      "difficulte": 1
+    },
+    {
+      "id": "MEC-0033",
+      "theme": "mecanique",
+      "enonce": "Les perçages (trous) visibles sur certains disques de frein contribuent à leur refroidissement :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Les perçages favorisent le refroidissement du disque et l'évacuation de l'eau, des gaz et des poussières (A) : le freinage reste plus efficace et plus constant. Ils ne sont pas que décoratifs (B faux).",
+      "difficulte": 1
+    },
+    {
+      "id": "MEC-0034",
+      "theme": "mecanique",
+      "enonce": "Une jante de ma moto est endommagée (déformée ou fissurée). Je peux continuer à circuler :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["b"],
+      "explication": "Une jante endommagée compromet la tenue du pneu et la sécurité : on ne circule pas (B). Il faut la faire vérifier ou remplacer avant de reprendre la route (A faux).",
+      "difficulte": 1
+    },
+    {
+      "id": "MEC-0035",
+      "theme": "mecanique",
+      "enonce": "Ma moto doit posséder un dispositif réfléchissant (catadioptre) à l'arrière :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Un catadioptre arrière est obligatoire (A) : il renvoie la lumière des autres véhicules et rend la moto visible la nuit. Son absence est une infraction (B faux).",
+      "difficulte": 1
+    },
+    {
+      "id": "EQP-0009",
+      "theme": "equipements",
+      "enonce": "Il pleut fortement. Je circule avec la visière de mon casque :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Fermée." },
+        { "id": "b", "texte": "Ouverte." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Sous la pluie, on roule visière fermée (A) : elle protège les yeux des gouttes et des projections et préserve la vision. Visière ouverte (B), on est gêné, voire aveuglé.",
+      "difficulte": 1
+    },
+    {
+      "id": "EQP-0010",
+      "theme": "equipements",
+      "enonce": "Pour circuler à moto, il est obligatoire de porter au minimum :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Un casque homologué." },
+        { "id": "b", "texte": "Des gants certifiés (CE)." },
+        { "id": "c", "texte": "Des bottes." },
+        { "id": "d", "texte": "Un blouson." }
+      ],
+      "bonnesReponses": ["a", "b"],
+      "explication": "Le minimum obligatoire est le casque homologué (A) et les gants certifiés CE (B), pour le conducteur comme pour le passager. Les bottes (C) et le blouson (D) sont vivement conseillés mais pas obligatoires.",
+      "difficulte": 2
+    },
+    {
+      "id": "EQP-0011",
+      "theme": "equipements",
+      "enonce": "Pour garantir une protection efficace, je peux acheter un casque d'occasion :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["b"],
+      "explication": "On évite le casque d'occasion (B) : on ne connaît pas son histoire ; un choc, même invisible, peut avoir dégradé sa coque. Mieux vaut un casque neuf homologué (A faux).",
+      "difficulte": 1
+    },
+    {
+      "id": "EQP-0012",
+      "theme": "equipements",
+      "enonce": "Un blouson de moto sert principalement à :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Me protéger du froid." },
+        { "id": "b", "texte": "Me protéger en cas de chute." },
+        { "id": "c", "texte": "Me protéger de la pluie." }
+      ],
+      "bonnesReponses": ["b"],
+      "explication": "Le rôle premier d'un blouson moto est la protection en cas de chute (B) : résistance à l'abrasion, coques aux épaules et coudes. Le froid (A) et la pluie (C) sont secondaires, gérés par des doublures ou membranes.",
+      "difficulte": 1
+    },
+    {
+      "id": "EQP-0013",
+      "theme": "equipements",
+      "enonce": "La nuit, l'utilisation de l'écran solaire interne (pare-soleil teinté) du casque est interdite :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "L'écran solaire teinté est interdit la nuit (A) : comme des lunettes de soleil, il réduit fortement la vision dans l'obscurité. On le relève la nuit (B faux).",
+      "difficulte": 2
+    },
+    {
+      "id": "EQP-0014",
+      "theme": "equipements",
+      "enonce": "Le port d'un blouson certifié « équipement de protection individuelle » (EPI) est :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Obligatoire." },
+        { "id": "b", "texte": "Fortement conseillé." }
+      ],
+      "bonnesReponses": ["b"],
+      "explication": "Le blouson certifié est fortement conseillé (B) mais non obligatoire : seuls le casque homologué et les gants certifiés le sont. Le porter réduit nettement les blessures en cas de chute.",
+      "difficulte": 2
+    },
+    {
+      "id": "DOC-0007",
+      "theme": "documents",
+      "enonce": "Je dois apposer sur ma moto le certificat (vignette) d'assurance :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["b"],
+      "explication": "Depuis le 1er avril 2024, la vignette et la carte verte ont disparu : on n'appose plus rien (B). Les forces de l'ordre vérifient l'assurance via le Fichier des véhicules assurés. L'assurance reste obligatoire, mais l'affichage non (A faux).",
+      "difficulte": 2
+    },
+    {
+      "id": "DOC-0008",
+      "theme": "documents",
+      "enonce": "En général, l'assurance de base (au tiers) de ma moto couvre aussi mon équipement (casque, blouson…) :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["b"],
+      "explication": "L'assurance de base (responsabilité civile) ne couvre pas votre propre équipement (B) : il faut une garantie spécifique. L'assurance au tiers indemnise surtout les autres victimes (A faux).",
+      "difficulte": 2
+    },
+    {
+      "id": "DOC-0009",
+      "theme": "documents",
+      "enonce": "Je viens d'obtenir le permis A1, c'est mon seul permis. Mon capital est de 12 points :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["b"],
+      "explication": "Un nouveau permis démarre en période probatoire avec 6 points (B), pas 12. Le capital monte ensuite progressivement jusqu'à 12 si aucune infraction n'est commise (A faux).",
+      "difficulte": 2
+    },
+    {
+      "id": "SEC-0009",
+      "theme": "secours",
+      "enonce": "Premier sur le lieu d'un accident impliquant une moto, j'actionne le coupe-circuit de la machine :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Couper le contact avec le coupe-circuit (A) supprime le risque d'incendie (carburant, étincelles) : c'est un geste de mise en sécurité avant de protéger, alerter et secourir (B faux).",
+      "difficulte": 2
+    },
+    {
+      "id": "SEC-0010",
+      "theme": "secours",
+      "enonce": "Un motard est blessé. Il est conseillé de lui retirer son casque pour l'aider à respirer :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["b"],
+      "explication": "On ne retire pas le casque (B) : bouger le cou peut aggraver une lésion de la colonne. On le laisse en place et on confie ce geste aux secours, sauf nécessité vitale (arrêt respiratoire). Donc A est faux.",
+      "difficulte": 3
+    },
+    {
+      "id": "CND-0008",
+      "theme": "conducteur",
+      "enonce": "La très grande majorité des personnes décédées à moto sont :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Des hommes." },
+        { "id": "b", "texte": "Des femmes." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Les hommes représentent environ 94 % des motards tués (A) : ils parcourent la grande majorité des kilomètres à moto. C'est lié à l'exposition et aux comportements, pas une fatalité de sexe.",
+      "difficulte": 1
+    },
+    {
+      "id": "CND-0009",
+      "theme": "conducteur",
+      "enonce": "Plus ma vitesse augmente, plus mon champ de vision :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Augmente." },
+        { "id": "b", "texte": "Diminue." }
+      ],
+      "bonnesReponses": ["b"],
+      "explication": "À vitesse élevée, le regard se porte loin et le champ visuel se rétrécit (effet « tunnel », B) : on perçoit moins les côtés, d'où l'importance d'anticiper. Le champ ne s'élargit pas avec la vitesse (A faux).",
+      "difficulte": 2
+    },
+    {
+      "id": "CND-0010",
+      "theme": "conducteur",
+      "enonce": "Je souhaite devenir motard. Mon budget peut se limiter à l'achat de la moto :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["b"],
+      "explication": "Le budget ne se limite pas à la moto (B) : il faut prévoir l'équipement (casque, gants, blouson…), l'assurance, l'entretien, le carburant et le contrôle technique. Ne compter que la moto (A) est une erreur.",
+      "difficulte": 1
+    },
+    {
+      "id": "CND-0011",
+      "theme": "conducteur",
+      "enonce": "Même à l'arrêt (feu rouge, stop), je continue à surveiller le trafic derrière moi :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "À moto, on surveille aussi l'arrière à l'arrêt (A) : un véhicule arrivant trop vite peut ne pas vous voir. Garder un rapport engagé et une échappatoire permet de se dégager. Cesser de surveiller (B) est risqué.",
+      "difficulte": 2
+    },
+    {
+      "id": "RTE-0008",
+      "theme": "route",
+      "enonce": "Sur une moto, l'effet gyroscopique qui stabilise la machine devient notable à partir d'environ :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "10 km/h." },
+        { "id": "b", "texte": "20 km/h." },
+        { "id": "c", "texte": "30 km/h." }
+      ],
+      "bonnesReponses": ["c"],
+      "explication": "L'effet gyroscopique des roues devient nettement perceptible vers 30 km/h (C) : la moto se stabilise d'elle-même. À très basse vitesse (A, B), il est faible, d'où un équilibre plus délicat.",
+      "difficulte": 2
+    },
+    {
+      "id": "RTE-0009",
+      "theme": "route",
+      "enonce": "Les accidents mortels à moto se produisent principalement :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "En agglomération." },
+        { "id": "b", "texte": "Hors agglomération." },
+        { "id": "c", "texte": "Sur les autoroutes." }
+      ],
+      "bonnesReponses": ["b"],
+      "explication": "La majorité des motards tués le sont hors agglomération (B), sur des routes où la vitesse est plus élevée (virages, obstacles). L'agglomération (A) concentre plutôt les accidents matériels ; l'autoroute (C) est moins meurtrière à moto.",
+      "difficulte": 2
+    },
+    {
+      "id": "RTE-0010",
+      "theme": "route",
+      "enonce": "À faible vitesse, il est souvent moins risqué d'éviter un obstacle que de réaliser un freinage d'urgence :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "À faible vitesse, un évitement maîtrisé est souvent préférable (A) à un freinage d'urgence qui peut bloquer une roue et faire chuter. Le choix dépend toujours de l'espace disponible (donc B est trop catégorique).",
+      "difficulte": 3
+    },
+    {
+      "id": "RTE-0011",
+      "theme": "route",
+      "enonce": "Mon passager est bien installé s'il se tient fermement (au conducteur ou aux poignées) et garde les pieds sur les repose-pieds :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Un passager bien installé se tient fermement et garde les pieds sur les cale-pieds (A) : il accompagne les mouvements sans gêner la conduite. Un passager mal tenu déséquilibre la moto (B faux).",
+      "difficulte": 1
+    },
+    {
+      "id": "RTE-0012",
+      "theme": "route",
+      "enonce": "La traversée de rails (tramway) ou de bandes peintes réduit l'adhérence des pneus :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Rails et marquages sont glissants, surtout mouillés : l'adhérence chute (A). On les franchit sans freiner ni accélérer dessus. Croire qu'ils n'y changent rien (B) est faux.",
+      "difficulte": 1
+    },
+    {
+      "id": "RTE-0013",
+      "theme": "route",
+      "enonce": "Pour franchir des rails en sécurité, je les aborde aussi perpendiculairement que possible :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "On franchit les rails le plus perpendiculairement possible (A) pour éviter que la roue ne glisse le long du rail. Les aborder de biais (B) augmente fortement le risque de chute.",
+      "difficulte": 2
+    },
+    {
+      "id": "RTE-0014",
+      "theme": "route",
+      "enonce": "La répartition des bagages et la position du passager ont une influence importante sur la stabilité de la moto :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Le poids et sa répartition modifient l'équilibre, le freinage et la tenue de route (A) : une charge mal placée déstabilise la moto. C'est loin d'être négligeable (B faux).",
+      "difficulte": 1
+    },
+    {
+      "id": "RTE-0015",
+      "theme": "route",
+      "enonce": "Pour transporter une charge en préservant la stabilité, il est préférable d'utiliser :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Une sacoche de réservoir (charge basse et centrée)." },
+        { "id": "b", "texte": "Un top-case lourd à l'arrière." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Mieux vaut une charge basse et proche du centre, comme une sacoche de réservoir (A) : la stabilité est préservée. Un top-case lourd, haut et en porte-à-faux arrière (B) dégrade la tenue de route, surtout à vitesse élevée.",
+      "difficulte": 2
+    },
+    {
+      "id": "RTE-0016",
+      "theme": "route",
+      "enonce": "Lors d'un freinage d'urgence, je privilégie en premier lieu l'utilisation :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Du frein avant." },
+        { "id": "b", "texte": "Du frein arrière." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "C'est le frein avant qui fournit l'essentiel de la puissance de freinage (A), grâce au transfert de charge vers l'avant, tout en gardant le frein arrière en appui. Se reposer sur l'arrière seul (B) allonge la distance d'arrêt.",
+      "difficulte": 2
+    },
+    {
+      "id": "RTE-0017",
+      "theme": "route",
+      "enonce": "Un écran (bavette) fixé en bas d'une glissière, dans un virage, est un dispositif de sécurité passive pour les motards :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Ces écrans moto sont une sécurité passive (A) : ils n'empêchent pas l'accident mais limitent les blessures en cas de chute, en évitant le choc contre les supports de glissière. La sécurité active, elle, vise à éviter l'accident.",
+      "difficulte": 2
+    },
+    {
+      "id": "RTE-0018",
+      "theme": "route",
+      "enonce": "L'écran de protection moto installé sur une glissière de sécurité est un dispositif de sécurité active :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["b"],
+      "explication": "C'est une sécurité passive, pas active (B) : il agit pendant la chute pour réduire les blessures. La sécurité active (ABS, visibilité, anticipation) vise à éviter l'accident avant qu'il n'arrive. Donc A est faux.",
+      "difficulte": 2
+    },
+    {
+      "id": "USG-0008",
+      "theme": "usagers",
+      "enonce": "La capacité d'accélération d'une moto peut surprendre les autres usagers :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Une moto accélère souvent plus vite qu'une voiture (A) : un automobiliste peut mal évaluer votre vitesse d'arrivée et s'engager devant vous. D'où l'importance d'anticiper et de se rendre visible (B faux).",
+      "difficulte": 1
+    },
+    {
+      "id": "SIG-0009",
+      "theme": "signalisation",
+      "enonce": "En circulation, de jour comme de nuit, l'allumage du ou des feux de croisement est :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Facultatif." },
+        { "id": "b", "texte": "Obligatoire." }
+      ],
+      "bonnesReponses": ["b"],
+      "explication": "Les deux-roues motorisés circulent feux de croisement allumés en permanence (B), ce qui améliore leur visibilité. Ce n'est pas facultatif (A) et l'oubli est sanctionné.",
+      "difficulte": 1
+    },
+    {
+      "id": "SIG-0010",
+      "theme": "signalisation",
+      "enonce": "Deux motards sont autorisés à circuler de front (côte à côte) sur la même voie :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["b"],
+      "explication": "Rouler de front sur une même voie n'est pas autorisé (B) : les motards se placent en quinconce (décalés) pour garder distances de sécurité et visibilité. Côte à côte (A) réduit les marges de manœuvre.",
+      "difficulte": 2
+    },
+    {
+      "id": "SIG-0011",
+      "theme": "signalisation",
+      "enonce": "À l'approche d'un passage piéton encombré, je m'arrête avant celui-ci pour ne pas le masquer :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "On s'arrête avant le passage (A) pour ne pas le bloquer ni cacher un piéton aux autres usagers. S'arrêter sur le passage (B) est dangereux et interdit.",
+      "difficulte": 1
+    },
+    {
+      "id": "SIG-0012",
+      "theme": "signalisation",
+      "enonce": "La circulation inter-files des motos est interdite en présence de travaux sur la voie :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "La circulation inter-files n'est autorisée que dans des conditions précises ; elle est notamment proscrite en présence de travaux (A), qui réduisent les largeurs et la sécurité. Continuer à se faufiler (B) est interdit et dangereux.",
+      "difficulte": 3
+    },
+    {
+      "id": "SIG-0013",
+      "theme": "signalisation",
+      "enonce": "La circulation inter-files est également interdite à l'approche d'un accident :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "À l'approche d'un accident, on ne se faufile pas entre les files (A) : présence de secours, de personnes et d'obstacles. On ralentit et on laisse le passage. Donc B est faux.",
+      "difficulte": 3
     }
 
   ]

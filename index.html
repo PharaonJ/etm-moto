@@ -101,6 +101,8 @@
     .timer.warn{background:var(--bad)}
     .enonce{font-size:18px;font-weight:600;margin:8px 0 6px}
     .hint{font-size:13px;color:var(--muted);margin:0 0 14px;font-style:italic}
+    /* Illustration optionnelle d'une question (panneau, schéma, photo) si "media" est rempli. */
+    .qimg{display:block;max-width:100%;height:auto;border-radius:12px;border:1px solid var(--border);margin:4px 0 12px}
 
     /* ---- Propositions (cases à cocher déguisées en gros boutons) ---- */
     .props{display:grid;gap:10px}
@@ -430,6 +432,7 @@
           '</div>' + timer +
         '</div>' +
         '<p class="enonce">'+esc(q.enonce)+'</p>' +
+        (q.media ? '<img class="qimg" src="'+esc(q.media)+'" alt="Illustration de la question">' : '') +
         '<p class="hint">'+(q.bonnesReponses.length === 1 ? "Une réponse" : "Plusieurs réponses")+'</p>' +
         '<div class="props" id="props">'+propsHtml+'</div>' +
         '<div class="explain" id="explain" hidden></div>' +
