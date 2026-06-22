@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Sur mobile, la barre du navigateur prend la couleur du bandeau de l'app. -->
+  <meta name="theme-color" content="#1d3557">
+  <title>ETM 2026 — Entraînement au code moto</title>
+
+  <!-- ============================== STYLE (CSS) ==============================
+       Interface sobre, mobile d'abord, gros boutons, fort contraste.
+       Les couleurs sont définies une seule fois (variables) pour rester
+       cohérentes partout et faciles à modifier.
+  ========================================================================== -->
+  <style>
+    :root{
+      --bg:#eef1f5;
+      --card:#ffffff;
+      --ink:#16191d;
+      --muted:#5b6470;
+      --accent:#1d3557;     /* bleu nuit sobre */
+      --accent-soft:#e7ecf3;
+      --ok:#1b7f4b;         /* vert : bonne réponse */
+      --ok-soft:#e4f4ea;
+      --bad:#c0392b;        /* rouge : mauvaise réponse */
+      --bad-soft:#fbe9e7;
+      --border:#dde2e9;
+      --radius:14px;
+      --shadow:0 1px 3px rgba(20,25,35,.08), 0 6px 18px rgba(20,25,35,.05);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    /* Confort mobile : ici TOUT ce qui se tape est un <button>, donc une seule
+       règle suffit — pas de flash gris au toucher, pas de zoom accidentel au
+       double-tap, pas de sélection de texte involontaire quand on tapote vite. */
+    button{
+      -webkit-tap-highlight-color:transparent;
+      touch-action:manipulation;
+      -webkit-user-select:none;user-select:none;
+    }
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      line-height:1.5;
+      -webkit-font-smoothing:antialiased;
+      -webkit-text-size-adjust:100%;text-size-adjust:100%; /* iOS : pas de texte gonflé en paysage */
+    }
+    .topbar{
+      position:sticky;top:0;z-index:10;
+      background:var(--accent);color:#fff;
+      padding:14px 16px;
+      display:flex;align-items:center;gap:10px;
+      box-shadow:var(--shadow);
+    }
+    .brand{
+      background:none;border:none;color:#fff;cursor:pointer;
+      font-size:18px;font-weight:700;padding:0;display:flex;align-items:center;gap:8px;
+    }
+    .brand span{font-weight:400;opacity:.8;font-size:14px}
+    main{max-width:680px;margin:0 auto;padding:18px 16px 40px}
+    h1{font-size:24px;margin:4px 0 6px}
+    h2{font-size:20px;margin:0 0 14px}
+    h3{font-size:16px;margin:22px 0 10px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+    .sub{color:var(--muted);margin:0 0 18px}
+    .muted{color:var(--muted)}
+
+    /* ---- Boutons génériques ---- */
+    .btn{
+      font:inherit;font-weight:600;cursor:pointer;border:1px solid transparent;
+      border-radius:12px;padding:14px 18px;min-height:52px;
+      transition:transform .04s ease, background .15s ease;
+    }
+    .btn:active{transform:translateY(1px)}
+    .btn.primary{background:var(--accent);color:#fff}
+    .btn.ghost{background:#fff;color:var(--ink);border-color:var(--border)}
+    .btn.danger{background:#fff;color:var(--bad);border-color:var(--bad)}
+    .link{background:none;border:none;color:var(--accent);cursor:pointer;font:inherit;padding:6px 0;margin-bottom:8px}
+
+    /* ---- Menu d'accueil (grandes tuiles) ---- */
+    .menu{display:grid;gap:12px}
+    .tile{
+      text-align:left;background:var(--card);border:1px solid var(--border);
+      border-radius:var(--radius);padding:18px;cursor:pointer;
+      display:flex;flex-direction:column;gap:4px;box-shadow:var(--shadow);
+      transition:border-color .15s ease, transform .04s ease;
+    }
+    .tile:hover{border-color:var(--accent)}
+    .tile:active{transform:translateY(1px)}
+    .tt{font-size:17px;font-weight:700}
+    .td{font-size:14px;color:var(--muted)}
+
+    /* ---- Carte / quiz ---- */
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .center{text-align:center}
+    .quiz-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}
+    .qmeta{display:flex;flex-direction:column;gap:6px}
+    .badge{display:inline-block;background:var(--accent-soft);color:var(--accent);font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;width:fit-content}
+    .counter{font-size:13px;color:var(--muted)}
+    .timer{font-variant-numeric:tabular-nums;font-weight:700;font-size:20px;background:var(--accent);color:#fff;padding:6px 12px;border-radius:10px}
+    .timer.warn{background:var(--bad)}
+    .enonce{font-size:18px;font-weight:600;margin:8px 0 6px}
+    .hint{font-size:13px;color:var(--muted);margin:0 0 14px;font-style:italic}
+
+    /* ---- Propositions (cases à cocher déguisées en gros boutons) ---- */
+    .props{display:grid;gap:10px}
+    .prop{
+      display:flex;align-items:flex-start;gap:12px;text-align:left;
+      background:#fff;border:2px solid var(--border);border-radius:12px;
+      padding:14px;cursor:pointer;font:inherit;min-height:52px;width:100%;
+    }
+    .prop .box{flex:0 0 auto;width:24px;height:24px;border:2px solid var(--muted);border-radius:6px;margin-top:1px;position:relative}
+    .prop .ptxt{flex:1}
+    .prop.sel{border-color:var(--accent);background:var(--accent-soft)}
+    .prop.sel .box{background:var(--accent);border-color:var(--accent)}
+    .prop.sel .box::after,.prop.good .box::after{content:"✓";position:absolute;inset:0;color:#fff;font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center}
+    .props.locked .prop{cursor:default}
+    .prop.good{border-color:var(--ok);background:var(--ok-soft)}
+    .prop.good .box{background:var(--ok);border-color:var(--ok)}
+    .prop.bad{border-color:var(--bad);background:var(--bad-soft)}
+    .prop.bad .box{border-color:var(--bad)}
+    .prop.bad .box::after{content:"✕";position:absolute;inset:0;color:var(--bad);font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center}
+    .prop.missed{border-style:dashed;border-color:var(--ok)}
+
+    /* ---- Explication ---- */
+    .explain{margin-top:14px;border-radius:12px;padding:14px;border:1px solid var(--border)}
+    .explain.ok{background:var(--ok-soft);border-color:var(--ok)}
+    .explain.ko{background:var(--bad-soft);border-color:var(--bad)}
+    .explain .verdict{font-weight:700;margin-bottom:6px}
+    .explain p{margin:0}
+
+    .actions{display:flex;gap:10px;margin-top:18px}
+    .actions .btn{flex:1}
+
+    /* ---- Résultat ---- */
+    .result .score{text-align:center;padding:18px;border-radius:12px;margin-bottom:8px}
+    .result .score.pass{background:var(--ok-soft)}
+    .result .score.fail{background:var(--bad-soft)}
+    .result .big{font-size:48px;font-weight:800;line-height:1}
+    .result .big span{font-size:22px;color:var(--muted);font-weight:600}
+    .result .verdict{font-size:20px;font-weight:800;margin:6px 0 2px}
+    .result .score.pass .verdict{color:var(--ok)}
+    .result .score.fail .verdict{color:var(--bad)}
+
+    /* ---- Tableaux thèmes / barres ---- */
+    table.themes{width:100%;border-collapse:collapse}
+    table.themes td{padding:8px 6px;border-bottom:1px solid var(--border);font-size:14px;vertical-align:middle}
+    table.themes td:first-child{font-weight:600}
+    .bar{background:#e7eaef;height:10px;border-radius:6px;overflow:hidden;min-width:80px}
+    .bar span{display:block;height:100%;background:var(--accent)}
+    .pctcell{text-align:right;font-variant-numeric:tabular-nums;width:48px}
+
+    /* ---- Tableau de bord (3 chiffres clés) ---- */
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:8px}
+    .stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px;text-align:center;box-shadow:var(--shadow)}
+    .stat .num{font-size:26px;font-weight:800}
+    .stat .num span{font-size:15px;color:var(--muted)}
+    .stat .lbl{font-size:12px;color:var(--muted);margin-top:4px}
+
+    .foot{max-width:680px;margin:0 auto;padding:0 16px 30px;color:var(--muted);font-size:12px;text-align:center}
+
+    @media (min-width:560px){
+      .menu{grid-template-columns:1fr 1fr}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <button class="brand" id="brand">🏍️ ETM 2026 <span>code moto</span></button>
+  </header>
+
+  <!-- Toute l'application s'affiche ici. Le JavaScript remplace ce contenu
+       selon l'écran (accueil, quiz, résultat, tableau de bord). -->
+  <main id="view"></main>
+
+  <footer class="foot">
+    Application locale — tes données restent sur cet appareil (aucun envoi sur internet).
+  </footer>
+
+  <!-- 1) On charge d'abord la banque de questions (elle crée window.ETM_BANK). -->
+  <script src="questions.js"></script>
+
+  <!-- 2) Puis le cerveau de l'application. ============================== -->
+  <script>
+  "use strict";
+
+  /* =========================================================
+     ÉTAT GLOBAL
+     - BANK    : la banque chargée depuis questions.js
+     - store   : la progression sauvegardée (localStorage)
+     - session : la série de questions en cours (ou null)
+  ========================================================= */
+  const STORE_KEY = "etm2026";
+  let BANK = null;
+  let store = null;
+  let session = null;
+
+  const view = document.getElementById("view");
+  document.getElementById("brand").addEventListener("click", showHome);
+
+  /* ---------- Sauvegarde / chargement de la progression ---------- */
+  function defaultStore(){
+    return { version:1, examens:[], erreurs:[], statsTheme:{}, totalTraitees:0 };
+  }
+  function loadStore(){
+    try{
+      const raw = localStorage.getItem(STORE_KEY);
+      if(!raw) return defaultStore();
+      const data = JSON.parse(raw);
+      // garde-fous au cas où la structure serait incomplète
+      return Object.assign(defaultStore(), data);
+    }catch(e){ return defaultStore(); }
+  }
+  function saveStore(){
+    try{ localStorage.setItem(STORE_KEY, JSON.stringify(store)); }catch(e){}
+  }
+
+  /* ---------- Petits utilitaires ---------- */
+  // Mélange un tableau (algorithme de Fisher-Yates).
+  function shuffle(arr){
+    const a = arr.slice();
+    for(let i=a.length-1;i>0;i--){
+      const j = Math.floor(Math.random()*(i+1));
+      [a[i],a[j]] = [a[j],a[i]];
+    }
+    return a;
+  }
+  // Deux ensembles de réponses sont-ils identiques ? (cœur du scoring ETM)
+  function sameSet(a,b){
+    if(a.length !== b.length) return false;
+    const sb = new Set(b);
+    return a.every(x => sb.has(x));
+  }
+  function byTheme(themeKey){
+    return BANK.questions.filter(q => q.theme === themeKey);
+  }
+  function fmt(sec){
+    sec = Math.max(0, sec|0);
+    const m = Math.floor(sec/60), s = sec%60;
+    return (m<10?"0":"")+m+":"+(s<10?"0":"")+s;
+  }
+  // Sécurise tout texte inséré dans la page.
+  function esc(s){
+    return String(s).replace(/[&<>"']/g, c => (
+      {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]
+    ));
+  }
+
+  /* ---------- Enregistrement d'une réponse (stats + erreurs) ---------- */
+  function recordAnswer(q, correct){
+    if(!store.statsTheme[q.theme]) store.statsTheme[q.theme] = {vues:0, bonnes:0};
+    store.statsTheme[q.theme].vues++;
+    if(correct) store.statsTheme[q.theme].bonnes++;
+    store.totalTraitees++;
+    const i = store.erreurs.indexOf(q.id);
+    if(correct){ if(i>=0) store.erreurs.splice(i,1); }   // maîtrisée -> on l'enlève
+    else { if(i<0) store.erreurs.push(q.id); }            // ratée -> on la mémorise
+  }
+
+  /* =========================================================
+     DÉMARRAGE
+  ========================================================= */
+  function init(){
+    if(!window.ETM_BANK || !Array.isArray(window.ETM_BANK.questions)){
+      renderBankError();
+      return;
+    }
+    BANK = window.ETM_BANK;
+    store = loadStore();
+    showHome();
+  }
+
+  function renderBankError(){
+    view.innerHTML =
+      '<section class="card center">' +
+        '<h2>Banque de questions introuvable</h2>' +
+        '<p class="muted">Le fichier <code>questions.js</code> doit se trouver dans le même dossier que <code>index.html</code>. Vérifie sa présence puis recharge la page.</p>' +
+      '</section>';
+  }
+
+  /* =========================================================
+     ÉCRAN : ACCUEIL
+  ========================================================= */
+  function showHome(){
+    if(session && session.timerId){ clearInterval(session.timerId); }
+    session = null;
+    const nbErr = store.erreurs.length;
+    view.innerHTML =
+      '<section>' +
+        '<h1>Prépare ton code moto</h1>' +
+        '<p class="sub">Épreuve théorique moto (ETM 2026) — entraînement hors-ligne.</p>' +
+        '<div class="menu">' +
+          '<button class="tile" id="m-exam"><span class="tt">Examen blanc</span><span class="td">40 questions · 30 min · note sur 40</span></button>' +
+          '<button class="tile" id="m-theme"><span class="tt">Entraînement par thème</span><span class="td">Série de 10 ou 20, correction immédiate</span></button>' +
+          '<button class="tile" id="m-err"><span class="tt">Réviser mes erreurs</span><span class="td">'+nbErr+' question(s) à retravailler</span></button>' +
+          '<button class="tile" id="m-dash"><span class="tt">Tableau de bord</span><span class="td">Ma progression et mes points faibles</span></button>' +
+        '</div>' +
+      '</section>';
+    document.getElementById("m-exam").onclick = startExam;
+    document.getElementById("m-theme").onclick = showThemePicker;
+    document.getElementById("m-err").onclick = startErreurs;
+    document.getElementById("m-dash").onclick = showDashboard;
+  }
+
+  /* =========================================================
+     ÉCRAN : CHOIX DU THÈME, puis de la longueur de série
+  ========================================================= */
+  function showThemePicker(){
+    const tiles = Object.keys(BANK.themes).map(k => {
+      const n = byTheme(k).length;
+      return '<button class="tile theme-pick" data-theme="'+k+'">' +
+               '<span class="tt">'+esc(BANK.themes[k].label)+'</span>' +
+               '<span class="td">'+n+' question(s)</span>' +
+             '</button>';
+    }).join("");
+    view.innerHTML =
+      '<section>' +
+        '<button class="link" id="back">← Accueil</button>' +
+        '<h2>Choisis un thème</h2>' +
+        '<div class="menu">'+tiles+'</div>' +
+      '</section>';
+    document.getElementById("back").onclick = showHome;
+    Array.prototype.forEach.call(document.querySelectorAll(".theme-pick"), b => {
+      b.onclick = () => showLengthPicker(b.dataset.theme);
+    });
+  }
+
+  function showLengthPicker(theme){
+    const n = byTheme(theme).length;
+    view.innerHTML =
+      '<section>' +
+        '<button class="link" id="back">← Thèmes</button>' +
+        '<h2>'+esc(BANK.themes[theme].label)+'</h2>' +
+        '<p class="sub">'+n+' question(s) disponibles.</p>' +
+        '<div class="menu">' +
+          '<button class="tile" id="s10"><span class="tt">Série de 10</span><span class="td">Correction après chaque réponse</span></button>' +
+          '<button class="tile" id="s20"><span class="tt">Série de 20</span><span class="td">Pour s\'entraîner plus longtemps</span></button>' +
+        '</div>' +
+      '</section>';
+    document.getElementById("back").onclick = showThemePicker;
+    document.getElementById("s10").onclick = () => startTheme(theme, Math.min(10, n));
+    document.getElementById("s20").onclick = () => startTheme(theme, Math.min(20, n));
+  }
+
+  /* =========================================================
+     LANCEMENT DES DIFFÉRENTS MODES
+  ========================================================= */
+  // Tire 40 questions en équilibrant les thèmes (léger surpoids des points faibles).
+  function pickExam(){
+    const plan = { signalisation:5, conducteur:4, route:4, usagers:4,
+                   mecanique:6, equipements:5, documents:4, secours:5, environnement:3 };
+    let chosen = [], pool = [];
+    Object.keys(plan).forEach(th => {
+      const qs = shuffle(byTheme(th));
+      chosen = chosen.concat(qs.slice(0, plan[th]));
+      pool   = pool.concat(qs.slice(plan[th]));
+    });
+    if(chosen.length < 40){ // banque incomplète : on complète au mieux
+      chosen = chosen.concat(shuffle(pool).slice(0, 40 - chosen.length));
+    }
+    return shuffle(chosen).slice(0, 40);
+  }
+
+  function startExam(){
+    const qs = pickExam();
+    session = { mode:"examen", questions:qs, index:0, answers:[],
+                startTime:Date.now(), timerSec:30*60, timerId:null };
+    renderQuestion();
+    session.timerId = setInterval(() => {
+      session.timerSec--;
+      const t = document.getElementById("timer");
+      if(t){
+        t.textContent = fmt(session.timerSec);
+        if(session.timerSec <= 60) t.classList.add("warn");
+      }
+      if(session.timerSec <= 0){ finishExam(); }
+    }, 1000);
+  }
+
+  function startTheme(theme, count){
+    const qs = shuffle(byTheme(theme)).slice(0, count);
+    session = { mode:"theme", questions:qs, index:0, answers:[] };
+    renderQuestion();
+  }
+
+  function startErreurs(){
+    const ids = new Set(store.erreurs);
+    const qs = shuffle(BANK.questions.filter(q => ids.has(q.id)));
+    if(qs.length === 0){
+      view.innerHTML =
+        '<section class="card center">' +
+          '<h2>Aucune erreur enregistrée</h2>' +
+          '<p class="muted">Fais un examen blanc ou un entraînement : les questions ratées apparaîtront ici pour être révisées.</p>' +
+          '<div class="actions"><button class="btn primary" id="home">Retour à l\'accueil</button></div>' +
+        '</section>';
+      document.getElementById("home").onclick = showHome;
+      return;
+    }
+    session = { mode:"erreurs", questions:qs, index:0, answers:[] };
+    renderQuestion();
+  }
+
+  /* =========================================================
+     ÉCRAN : UNE QUESTION
+  ========================================================= */
+  function renderQuestion(){
+    const q = session.questions[session.index];
+    session.current = new Set();   // propositions cochées pour CETTE question
+    session.validated = false;
+    const total = session.questions.length;
+    const last = session.index === total - 1;
+    const themeLabel = (BANK.themes[q.theme] && BANK.themes[q.theme].label) || q.theme;
+    const timer = session.mode === "examen"
+      ? '<div class="timer" id="timer">'+fmt(session.timerSec)+'</div>' : '';
+    const validerLabel = (session.mode === "examen" && last) ? "Terminer l'examen" : "Valider";
+
+    const propsHtml = q.propositions.map(p =>
+      '<button class="prop" data-id="'+p.id+'">' +
+        '<span class="box"></span>' +
+        '<span class="ptxt">'+esc(p.texte)+'</span>' +
+      '</button>'
+    ).join("");
+
+    view.innerHTML =
+      '<section class="card quiz">' +
+        '<div class="quiz-head">' +
+          '<div class="qmeta">' +
+            '<span class="badge">'+esc(themeLabel)+'</span>' +
+            '<span class="counter">Question '+(session.index+1)+' / '+total+'</span>' +
+          '</div>' + timer +
+        '</div>' +
+        '<p class="enonce">'+esc(q.enonce)+'</p>' +
+        '<p class="hint">Une ou plusieurs réponses possibles.</p>' +
+        '<div class="props" id="props">'+propsHtml+'</div>' +
+        '<div class="explain" id="explain" hidden></div>' +
+        '<div class="actions">' +
+          '<button class="btn ghost" id="quit">Quitter</button>' +
+          '<button class="btn primary" id="valider">'+validerLabel+'</button>' +
+        '</div>' +
+      '</section>';
+
+    document.getElementById("props").addEventListener("click", onPropClick);
+    document.getElementById("valider").onclick = handleValidate;
+    document.getElementById("quit").onclick = onQuit;
+  }
+
+  function onPropClick(e){
+    const b = e.target.closest(".prop");
+    if(!b || session.validated) return;
+    const id = b.dataset.id;
+    if(session.current.has(id)){ session.current.delete(id); b.classList.remove("sel"); }
+    else { session.current.add(id); b.classList.add("sel"); }
+  }
+
+  function onQuit(){
+    if(session.mode === "examen"){
+      if(!confirm("Quitter l'examen ? La session en cours ne sera pas enregistrée.")) return;
+      clearInterval(session.timerId);
+    }
+    showHome();
+  }
+
+  function handleValidate(){
+    const q = session.questions[session.index];
+
+    // --- Mode examen : aucune correction, on enregistre et on avance ---
+    if(session.mode === "examen"){
+      const selected = Array.from(session.current);
+      session.answers[session.index] = { selected, correct: sameSet(selected, q.bonnesReponses) };
+      goNext();
+      return;
+    }
+
+    // --- Modes entraînement / révision : correction immédiate ---
+    if(!session.validated){
+      const selected = Array.from(session.current);
+      const correct = sameSet(selected, q.bonnesReponses);
+      session.answers[session.index] = { selected, correct };
+      recordAnswer(q, correct);
+      saveStore();
+      session.validated = true;
+      showCorrection(q, selected, correct);
+    } else {
+      goNext();
+    }
+  }
+
+  function showCorrection(q, selected, correct){
+    const props = document.getElementById("props");
+    props.classList.add("locked");
+    Array.prototype.forEach.call(props.querySelectorAll(".prop"), b => {
+      const id = b.dataset.id;
+      const isGood = q.bonnesReponses.includes(id);
+      const isSel = selected.includes(id);
+      b.classList.remove("sel");
+      if(isGood && isSel) b.classList.add("good");
+      else if(isGood && !isSel) b.classList.add("missed");
+      else if(!isGood && isSel) b.classList.add("bad");
+    });
+    const ex = document.getElementById("explain");
+    ex.hidden = false;
+    ex.className = "explain " + (correct ? "ok" : "ko");
+    ex.innerHTML =
+      '<div class="verdict">' + (correct ? "✅ Bonne réponse" : "❌ Réponse incorrecte") + '</div>' +
+      '<p>' + esc(q.explication) + '</p>';
+    const last = session.index === session.questions.length - 1;
+    document.getElementById("valider").textContent = last ? "Voir mon résultat" : "Question suivante";
+  }
+
+  function goNext(){
+    if(session.index < session.questions.length - 1){
+      session.index++;
+      renderQuestion();
+    } else {
+      session.mode === "examen" ? finishExam() : finishTrain();
+    }
+  }
+
+  /* =========================================================
+     FIN D'EXAMEN : score /40, réussi/échoué, détail par thème
+  ========================================================= */
+  function finishExam(){
+    if(session.timerId) clearInterval(session.timerId);
+    let score = 0;
+    const parTheme = {};
+    session.questions.forEach((q,i) => {
+      const a = session.answers[i] || { selected:[], correct:false };
+      if(!parTheme[q.theme]) parTheme[q.theme] = { bon:0, total:0 };
+      parTheme[q.theme].total++;
+      if(a.correct){ score++; parTheme[q.theme].bon++; }
+      recordAnswer(q, a.correct);   // alimente stats + erreurs (questions non répondues = ratées)
+    });
+    const dureeSec = Math.round((Date.now() - session.startTime)/1000);
+    const reussi = score >= 35;
+    store.examens.push({ date:new Date().toISOString(), score, total:40, reussi, dureeSec, parTheme });
+    if(store.examens.length > 50) store.examens = store.examens.slice(-50);
+    saveStore();
+    renderExamResult({ score, reussi, dureeSec, parTheme });
+  }
+
+  function renderExamResult(r){
+    const rows = Object.keys(BANK.themes).filter(k => r.parTheme[k]).map(k => {
+      const t = r.parTheme[k];
+      const pct = Math.round(100 * t.bon / t.total);
+      return '<tr><td>'+esc(BANK.themes[k].label)+'</td>' +
+             '<td>'+t.bon+'/'+t.total+'</td>' +
+             '<td><div class="bar"><span style="width:'+pct+'%"></span></div></td></tr>';
+    }).join("");
+    view.innerHTML =
+      '<section class="card result">' +
+        '<div class="score '+(r.reussi?"pass":"fail")+'">' +
+          '<div class="big">'+r.score+'<span>/40</span></div>' +
+          '<div class="verdict">'+(r.reussi?"RÉUSSI":"ÉCHOUÉ")+'</div>' +
+          '<div class="muted">Seuil de réussite : 35/40 · Durée '+fmt(r.dureeSec)+'</div>' +
+        '</div>' +
+        '<h3>Détail par thème (où je pèche)</h3>' +
+        '<table class="themes">'+rows+'</table>' +
+        '<div class="actions">' +
+          '<button class="btn ghost" id="home">Accueil</button>' +
+          '<button class="btn primary" id="rev">Réviser mes erreurs</button>' +
+        '</div>' +
+      '</section>';
+    document.getElementById("home").onclick = showHome;
+    document.getElementById("rev").onclick = startErreurs;
+  }
+
+  /* =========================================================
+     FIN D'ENTRAÎNEMENT / RÉVISION : petit récapitulatif
+  ========================================================= */
+  function finishTrain(){
+    const total = session.questions.length;
+    const score = session.answers.filter(a => a && a.correct).length;
+    const pct = Math.round(100 * score / total);
+    const mode = session.mode;
+    const theme = session.questions[0] ? session.questions[0].theme : null;
+    const count = session.questions.length;
+    view.innerHTML =
+      '<section class="card result">' +
+        '<div class="score '+(pct>=80?"pass":"fail")+'">' +
+          '<div class="big">'+score+'<span>/'+total+'</span></div>' +
+          '<div class="muted">'+pct+'% de bonnes réponses</div>' +
+        '</div>' +
+        '<div class="actions">' +
+          '<button class="btn ghost" id="home">Accueil</button>' +
+          '<button class="btn primary" id="again">Rejouer une série</button>' +
+        '</div>' +
+      '</section>';
+    document.getElementById("home").onclick = showHome;
+    document.getElementById("again").onclick = () =>
+      (mode === "erreurs") ? startErreurs() : startTheme(theme, count);
+  }
+
+  /* =========================================================
+     ÉCRAN : TABLEAU DE BORD
+  ========================================================= */
+  function showDashboard(){
+    if(session && session.timerId){ clearInterval(session.timerId); }
+    session = null;
+    const ex = store.examens;
+    const last = ex.slice(-10);
+    const avg = last.length ? (last.reduce((s,e)=>s+e.score,0)/last.length) : null;
+    const passRate = ex.length ? Math.round(100*ex.filter(e=>e.reussi).length/ex.length) : null;
+
+    const themeRows = Object.keys(BANK.themes).map(k => {
+      const st = store.statsTheme[k];
+      const pct = (st && st.vues) ? Math.round(100*st.bonnes/st.vues) : null;
+      const w = (pct===null) ? 0 : pct;
+      const txt = (pct===null) ? "—" : pct+"%";
+      return '<tr><td>'+esc(BANK.themes[k].label)+'</td>' +
+             '<td><div class="bar"><span style="width:'+w+'%"></span></div></td>' +
+             '<td class="pctcell">'+txt+'</td></tr>';
+    }).join("");
+
+    view.innerHTML =
+      '<section>' +
+        '<button class="link" id="back">← Accueil</button>' +
+        '<h2>Tableau de bord</h2>' +
+        '<div class="stats">' +
+          '<div class="stat"><div class="num">'+(avg!==null?avg.toFixed(1):"—")+'<span>/40</span></div><div class="lbl">Moyenne (10 derniers examens)</div></div>' +
+          '<div class="stat"><div class="num">'+(passRate!==null?passRate+"%":"—")+'</div><div class="lbl">Réussite aux examens</div></div>' +
+          '<div class="stat"><div class="num">'+store.totalTraitees+'</div><div class="lbl">Questions traitées</div></div>' +
+        '</div>' +
+        '<h3>Taux de réussite par thème</h3>' +
+        '<table class="themes">'+themeRows+'</table>' +
+        '<div class="actions"><button class="btn danger" id="reset">Réinitialiser mes données</button></div>' +
+      '</section>';
+    document.getElementById("back").onclick = showHome;
+    document.getElementById("reset").onclick = () => {
+      if(confirm("Effacer toute ta progression (scores, erreurs, statistiques) ?")){
+        store = defaultStore();
+        saveStore();
+        showDashboard();
+      }
+    };
+  }
+
+  /* Lancement quand la page est prête. */
+  init();
+  </script>
+</body>
+</html>
