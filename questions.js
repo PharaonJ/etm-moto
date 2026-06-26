@@ -17,9 +17,9 @@
 
 window.ETM_BANK = {
   "meta": {
-    "version": "2026.3",
-    "total": 123,
-    "note": "123 questions originales, tous thèmes. Format examen 2023 (indication Une/Plusieurs réponses). App compatible images via le champ 'media' (mettre une URL d'image au lieu de null). Montée en volume à poursuivre."
+    "version": "2026.4",
+    "total": 127,
+    "note": "127 questions originales, tous thèmes. Format examen 2023 (indication Une/Plusieurs réponses). App compatible images (champ 'media'). 4 questions de signalisation utilisent des panneaux dessinés en SVG. Montée en volume à poursuivre."
   },
 
   "themes": {
@@ -1815,6 +1815,62 @@ window.ETM_BANK = {
       "bonnesReponses": ["a"],
       "explication": "À l'approche d'un accident, on ne se faufile pas entre les files (A) : présence de secours, de personnes et d'obstacles. On ralentit et on laisse le passage. Donc B est faux.",
       "difficulte": 3
+    },
+
+    /* ===== SIGNALISATION AVEC IMAGES (panneaux dessinés en SVG — données « media » embarquées) ===== */
+    {
+      "id": "SIG-0014",
+      "theme": "signalisation",
+      "enonce": "Vous arrivez devant ce panneau. Que devez-vous faire ?",
+      "media": "images/stop.svg",
+      "propositions": [
+        { "id": "a", "texte": "Marquer un arrêt complet, même si la voie semble libre." },
+        { "id": "b", "texte": "Céder le passage aux véhicules circulant sur la route abordée." },
+        { "id": "c", "texte": "Ralentir et passer sans m'arrêter si rien ne vient." }
+      ],
+      "bonnesReponses": ["a", "b"],
+      "explication": "Le panneau STOP impose un arrêt complet à la limite de la chaussée (A), puis de céder le passage à tous les véhicules (B). Ralentir sans s'arrêter (C) est une infraction, même la voie libre.",
+      "difficulte": 1
+    },
+    {
+      "id": "SIG-0015",
+      "theme": "signalisation",
+      "enonce": "Ce panneau m'autorise à emprunter cette voie :",
+      "media": "images/sens-interdit.svg",
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["b"],
+      "explication": "C'est un sens interdit : l'accès est interdit à tout véhicule (B). S'y engager (A) est une infraction grave et très dangereuse (on circulerait à contresens).",
+      "difficulte": 1
+    },
+    {
+      "id": "SIG-0016",
+      "theme": "signalisation",
+      "enonce": "Ce panneau m'oblige à marquer systématiquement un arrêt complet :",
+      "media": "images/cedez-le-passage.svg",
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["b"],
+      "explication": "« Cédez le passage » impose de laisser passer les autres véhicules, mais pas de s'arrêter systématiquement (B) : on peut continuer si la voie est libre. L'arrêt complet obligatoire, c'est le panneau STOP (donc A est faux).",
+      "difficulte": 2
+    },
+    {
+      "id": "SIG-0017",
+      "theme": "signalisation",
+      "enonce": "D'après ce panneau, la vitesse maximale autorisée est :",
+      "media": "images/limitation-50.svg",
+      "propositions": [
+        { "id": "a", "texte": "30 km/h." },
+        { "id": "b", "texte": "50 km/h." },
+        { "id": "c", "texte": "70 km/h." }
+      ],
+      "bonnesReponses": ["b"],
+      "explication": "Ce panneau rond à bord rouge fixe une limitation de vitesse : ici 50 km/h (B). Elle reste valable jusqu'à un panneau de fin de limitation ou une nouvelle limitation.",
+      "difficulte": 1
     }
 
   ]
