@@ -23,7 +23,7 @@ Utilisateur **débutant en code** : expliquer simplement, jamais de code brut sa
 - **Images** : champ `media` d'une question = URL ou data-URI (sinon `null`). Sources **légales** : panneaux = SVG dessinés ou Wikimedia Commons ; schémas = SVG ; photos = banques libres. **Jamais** les images de l'examen.
 
 ## État (mis à jour le 2026-06-22)
-- **127 questions**, 0 erreur de format. Validateur : `node validate.js` (dans ce dossier). Objectif : ~3000.
+- **162 questions**, 0 erreur de format, dont **19 de signalisation illustrées** (panneaux SVG dans `images/`). Validateur : `node validate.js` (dans ce dossier). Objectif : ~3000.
 - App **compatible images** (le champ `media` affiche une illustration).
 - En attente d'une image (non ajoutées) : question « panneau, lundi 22 juin », question « palette de vitesse ».
 
