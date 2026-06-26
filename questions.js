@@ -17,9 +17,9 @@
 
 window.ETM_BANK = {
   "meta": {
-    "version": "2026.4",
-    "total": 127,
-    "note": "127 questions originales, tous thèmes. Format examen 2023 (indication Une/Plusieurs réponses). App compatible images (champ 'media'). 4 questions de signalisation utilisent des panneaux dessinés en SVG. Montée en volume à poursuivre."
+    "version": "2026.5",
+    "total": 162,
+    "note": "162 questions originales, tous thèmes. Format examen 2023 (indication Une/Plusieurs réponses). 19 questions de signalisation illustrées par des panneaux dessinés en SVG (dossier images/). Lots récents : signalisation illustrée + volume mécanique/équipements/secours. Montée en volume à poursuivre."
   },
 
   "themes": {
@@ -1870,6 +1870,481 @@ window.ETM_BANK = {
       ],
       "bonnesReponses": ["b"],
       "explication": "Ce panneau rond à bord rouge fixe une limitation de vitesse : ici 50 km/h (B). Elle reste valable jusqu'à un panneau de fin de limitation ou une nouvelle limitation.",
+      "difficulte": 1
+    },
+
+    /* ===== SIGNALISATION ILLUSTRÉE — lot 2 (panneaux dessinés en SVG) ===== */
+    {
+      "id": "SIG-0018",
+      "theme": "signalisation",
+      "enonce": "Ce panneau signifie :",
+      "media": "images/route-prioritaire.svg",
+      "propositions": [
+        { "id": "a", "texte": "Vous circulez sur une route prioritaire." },
+        { "id": "b", "texte": "Vous devez céder le passage à chaque intersection." },
+        { "id": "c", "texte": "Fin de route prioritaire." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Le losange jaune indique que vous êtes sur une route prioritaire (A) : vous gardez la priorité aux intersections suivantes, sauf indication contraire. Ce n'est ni un « cédez le passage » (B) ni la fin de priorité (C).",
+      "difficulte": 1
+    },
+    {
+      "id": "SIG-0019",
+      "theme": "signalisation",
+      "enonce": "Ce panneau indique :",
+      "media": "images/fin-route-prioritaire.svg",
+      "propositions": [
+        { "id": "a", "texte": "Le début d'une route prioritaire." },
+        { "id": "b", "texte": "La fin de la route prioritaire." }
+      ],
+      "bonnesReponses": ["b"],
+      "explication": "Le losange jaune barré marque la fin de la route prioritaire (B) : au-delà, vous n'êtes plus prioritaire et devez appliquer les règles ordinaires (souvent la priorité à droite).",
+      "difficulte": 2
+    },
+    {
+      "id": "SIG-0020",
+      "theme": "signalisation",
+      "enonce": "Ce panneau impose :",
+      "media": "images/limitation-30.svg",
+      "propositions": [
+        { "id": "a", "texte": "Une vitesse maximale de 30 km/h." },
+        { "id": "b", "texte": "Une vitesse minimale de 30 km/h." },
+        { "id": "c", "texte": "Une distance de 30 mètres." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Le cercle à bord rouge fixe une vitesse maximale de 30 km/h (A). Un « 30 » sur fond bleu indiquerait une vitesse minimale (B) ; il ne s'agit pas d'une distance (C).",
+      "difficulte": 1
+    },
+    {
+      "id": "SIG-0021",
+      "theme": "signalisation",
+      "enonce": "Ce panneau interdit :",
+      "media": "images/stationnement-interdit.svg",
+      "propositions": [
+        { "id": "a", "texte": "Le stationnement (l'arrêt reste possible)." },
+        { "id": "b", "texte": "L'arrêt et le stationnement." },
+        { "id": "c", "texte": "La circulation." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Le disque bleu avec une seule barre rouge interdit le stationnement (A), mais l'arrêt momentané reste autorisé. Avec deux barres en croix, ce serait arrêt ET stationnement interdits (B).",
+      "difficulte": 2
+    },
+    {
+      "id": "SIG-0022",
+      "theme": "signalisation",
+      "enonce": "Ce panneau interdit :",
+      "media": "images/arret-stationnement-interdit.svg",
+      "propositions": [
+        { "id": "a", "texte": "Seulement le stationnement." },
+        { "id": "b", "texte": "L'arrêt et le stationnement." }
+      ],
+      "bonnesReponses": ["b"],
+      "explication": "Les deux barres rouges en croix sur fond bleu interdisent à la fois l'arrêt et le stationnement (B). Une seule barre n'interdirait que le stationnement (A).",
+      "difficulte": 2
+    },
+    {
+      "id": "SIG-0023",
+      "theme": "signalisation",
+      "enonce": "Ce panneau (cercle blanc à bordure rouge) signifie :",
+      "media": "images/acces-interdit.svg",
+      "propositions": [
+        { "id": "a", "texte": "Accès interdit à tout véhicule, dans les deux sens." },
+        { "id": "b", "texte": "Sens interdit." },
+        { "id": "c", "texte": "Stationnement interdit." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Ce panneau interdit la circulation à tout véhicule dans les deux sens (A). Le sens interdit (B) comporte une barre blanche horizontale ; le stationnement interdit (C) est bleu.",
+      "difficulte": 2
+    },
+    {
+      "id": "SIG-0024",
+      "theme": "signalisation",
+      "enonce": "Ce panneau interdit :",
+      "media": "images/interdiction-demi-tour.svg",
+      "propositions": [
+        { "id": "a", "texte": "De faire demi-tour." },
+        { "id": "b", "texte": "De tourner à gauche." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "La flèche en demi-tour barrée interdit le demi-tour (A) jusqu'à la prochaine intersection. Ce n'est pas une interdiction de tourner à gauche (B).",
+      "difficulte": 1
+    },
+    {
+      "id": "SIG-0025",
+      "theme": "signalisation",
+      "enonce": "Ce panneau (rond bleu, flèche vers le haut) impose :",
+      "media": "images/obligation-tout-droit.svg",
+      "propositions": [
+        { "id": "a", "texte": "De continuer tout droit." },
+        { "id": "b", "texte": "Un sens interdit." },
+        { "id": "c", "texte": "De s'arrêter." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Le fond bleu indique une obligation : ici, continuer tout droit (A). Le bleu marque une obligation, pas une interdiction (B) ni un arrêt (C).",
+      "difficulte": 1
+    },
+    {
+      "id": "SIG-0026",
+      "theme": "signalisation",
+      "enonce": "Ce panneau vous oblige à :",
+      "media": "images/obligation-droite.svg",
+      "propositions": [
+        { "id": "a", "texte": "Tourner à droite." },
+        { "id": "b", "texte": "Tourner à gauche." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "La flèche bleue dirigée vers la droite impose de tourner à droite (A). Le fond bleu = obligation de suivre la direction indiquée.",
+      "difficulte": 1
+    },
+    {
+      "id": "SIG-0027",
+      "theme": "signalisation",
+      "enonce": "Ce panneau bleu portant « 30 » signifie :",
+      "media": "images/vitesse-minimale-30.svg",
+      "propositions": [
+        { "id": "a", "texte": "Vitesse maximale 30 km/h." },
+        { "id": "b", "texte": "Vitesse minimale obligatoire de 30 km/h." },
+        { "id": "c", "texte": "Fin de limitation à 30 km/h." }
+      ],
+      "bonnesReponses": ["b"],
+      "explication": "Sur fond bleu, c'est une obligation : rouler à au moins 30 km/h (vitesse minimale, B). Le même chiffre dans un cercle à bord rouge signifierait une vitesse maximale (A). Piège classique : bleu = obligation, rouge = interdiction.",
+      "difficulte": 2
+    },
+    {
+      "id": "SIG-0028",
+      "theme": "signalisation",
+      "enonce": "Ce panneau triangulaire à bord rouge annonce :",
+      "media": "images/danger-generique.svg",
+      "propositions": [
+        { "id": "a", "texte": "Un danger non précisé (« autre danger »)." },
+        { "id": "b", "texte": "Une interdiction." },
+        { "id": "c", "texte": "Une obligation." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Le triangle avec « ! » annonce un danger non précisé (A) : il faut redoubler de prudence. Les triangles signalent un danger, pas une interdiction (B, ronds rouges) ni une obligation (C, ronds bleus).",
+      "difficulte": 1
+    },
+    {
+      "id": "SIG-0029",
+      "theme": "signalisation",
+      "enonce": "Ce panneau annonce :",
+      "media": "images/danger-virage-droite.svg",
+      "propositions": [
+        { "id": "a", "texte": "Un virage dangereux à droite." },
+        { "id": "b", "texte": "Une obligation de tourner à droite." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Le triangle annonce un danger : ici un virage à droite (A). C'est une mise en garde, pas une obligation de tourner (B), qui serait un panneau rond bleu.",
+      "difficulte": 1
+    },
+    {
+      "id": "SIG-0030",
+      "theme": "signalisation",
+      "enonce": "Ce panneau annonce :",
+      "media": "images/danger-feu-tricolore.svg",
+      "propositions": [
+        { "id": "a", "texte": "Des feux tricolores." },
+        { "id": "b", "texte": "Un passage à niveau." },
+        { "id": "c", "texte": "Une zone de stationnement." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Le triangle de danger avec les trois feux annonce des feux tricolores (A) : préparez-vous à devoir vous arrêter. Ce n'est ni un passage à niveau (B) ni du stationnement (C).",
+      "difficulte": 1
+    },
+    {
+      "id": "SIG-0031",
+      "theme": "signalisation",
+      "enonce": "Ce panneau annonce :",
+      "media": "images/danger-passage-pietons.svg",
+      "propositions": [
+        { "id": "a", "texte": "Un passage pour piétons." },
+        { "id": "b", "texte": "Une aire de jeux." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Le triangle de danger avec un piéton annonce un passage pour piétons (A) : ralentissez et soyez prêt à céder le passage. Ce n'est pas une aire de jeux (B).",
+      "difficulte": 1
+    },
+    {
+      "id": "SIG-0032",
+      "theme": "signalisation",
+      "enonce": "Ce panneau (rond avec des barres obliques) signifie :",
+      "media": "images/fin-toutes-interdictions.svg",
+      "propositions": [
+        { "id": "a", "texte": "Fin de toutes les interdictions précédemment signalées." },
+        { "id": "b", "texte": "Début d'une zone d'interdictions." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Les barres obliques grises marquent la fin simultanée de toutes les interdictions précédentes (vitesse, dépassement, etc.) (A). Ce n'est pas le début d'une zone d'interdiction (B).",
+      "difficulte": 2
+    },
+
+    /* ===== MÉCANIQUE — volume (texte) ===== */
+    {
+      "id": "MEC-0036",
+      "theme": "mecanique",
+      "enonce": "Le levier de frein s'enfonce mou ou trop loin vers la poignée. Cela peut révéler :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "De l'air ou un manque de liquide dans le circuit de frein." },
+        { "id": "b", "texte": "Des pneus neufs." },
+        { "id": "c", "texte": "Un réservoir de carburant plein." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Un levier spongieux trahit souvent de l'air dans le circuit ou un niveau de liquide trop bas (A) : le freinage est dégradé, il faut faire vérifier. Cela n'a aucun rapport avec des pneus neufs (B) ou le carburant (C).",
+      "difficulte": 2
+    },
+    {
+      "id": "MEC-0037",
+      "theme": "mecanique",
+      "enonce": "Une suspension (amortisseurs) en mauvais état :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Dégrade la tenue de route et l'efficacité du freinage." },
+        { "id": "b", "texte": "N'a aucun effet sur la conduite." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Des amortisseurs usés font « pomper » la moto, réduisent l'adhérence et allongent le freinage (A). Leur état est donc loin d'être sans effet (B).",
+      "difficulte": 2
+    },
+    {
+      "id": "MEC-0038",
+      "theme": "mecanique",
+      "enonce": "Avant de partir, je vérifie le bon fonctionnement des feux, du feu stop et des clignotants :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Un éclairage et une signalisation en état sont essentiels pour voir et être vu (A) : une ampoule grillée (stop, clignotant) est dangereuse et verbalisable. On le vérifie régulièrement (B faux).",
+      "difficulte": 1
+    },
+    {
+      "id": "MEC-0039",
+      "theme": "mecanique",
+      "enonce": "La plaque d'immatriculation de ma moto doit être lisible et propre :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "La plaque doit rester lisible (propre, non masquée, conforme) (A) : une plaque illisible ou non conforme est une infraction (B faux).",
+      "difficulte": 1
+    },
+    {
+      "id": "MEC-0040",
+      "theme": "mecanique",
+      "enonce": "Concernant les pressions de gonflage des pneus :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Elles sont souvent différentes à l'avant et à l'arrière, selon les préconisations." },
+        { "id": "b", "texte": "Elles doivent être augmentées en cas de charge ou de passager." },
+        { "id": "c", "texte": "Elles sont toujours strictement identiques avant et arrière." }
+      ],
+      "bonnesReponses": ["a", "b"],
+      "explication": "Les pressions avant/arrière diffèrent souvent selon le constructeur (A) et s'augmentent avec une charge ou un passager (B). Elles ne sont donc pas systématiquement identiques (C). Se référer à la notice ou à l'étiquette constructeur.",
+      "difficulte": 2
+    },
+    {
+      "id": "MEC-0041",
+      "theme": "mecanique",
+      "enonce": "Pour démarrer le moteur en sécurité :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Je me mets au point mort, ou j'engage une vitesse en gardant l'embrayage tiré." },
+        { "id": "b", "texte": "Je laisse une vitesse engagée sans toucher l'embrayage." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "On démarre au point mort, ou embrayage débrayé si une vitesse est engagée (A), pour éviter tout départ intempestif. Démarrer en prise sans embrayer (B) ferait avancer la moto brutalement.",
+      "difficulte": 2
+    },
+    {
+      "id": "MEC-0042",
+      "theme": "mecanique",
+      "enonce": "Je trouve une tache d'huile sous ma moto après une nuit de stationnement :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Cela peut signaler une fuite, à faire vérifier." },
+        { "id": "b", "texte": "C'est toujours parfaitement normal." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Une tache d'huile ou de liquide peut révéler une fuite (joint, durite, fourche) (A) : à contrôler avant de rouler. Ce n'est pas anodin (B faux).",
+      "difficulte": 1
+    },
+    {
+      "id": "MEC-0043",
+      "theme": "mecanique",
+      "enonce": "Un niveau de liquide de frein anormalement bas peut indiquer :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Une usure avancée des plaquettes." },
+        { "id": "b", "texte": "Une fuite du circuit de freinage." },
+        { "id": "c", "texte": "Que tout va parfaitement bien." }
+      ],
+      "bonnesReponses": ["a", "b"],
+      "explication": "Le niveau baisse naturellement quand les plaquettes s'usent (A), mais une baisse marquée peut aussi venir d'une fuite (B) : dans tous les cas, on contrôle. Ce n'est pas un bon signe (C faux).",
+      "difficulte": 2
+    },
+    {
+      "id": "EQP-0015",
+      "theme": "equipements",
+      "enonce": "Pour circuler, mon casque doit être correctement attaché (jugulaire bouclée) :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non, il suffit de le poser sur la tête." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Un casque non attaché ne protège pas (il s'envole à la chute) et constitue une infraction : la jugulaire doit être bouclée (A). Simplement posé (B), il est inutile et illégal.",
+      "difficulte": 1
+    },
+    {
+      "id": "EQP-0016",
+      "theme": "equipements",
+      "enonce": "Un casque vendu pour rouler sur route doit être homologué (norme ECE) :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Seul un casque homologué (étiquette ECE) est autorisé sur la route (A) : il a passé des tests de protection. Un casque non homologué (déco, jouet) est interdit (B faux).",
+      "difficulte": 1
+    },
+    {
+      "id": "EQP-0017",
+      "theme": "equipements",
+      "enonce": "Une protection dorsale sert principalement à :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Protéger la colonne vertébrale en cas de choc." },
+        { "id": "b", "texte": "Tenir chaud en hiver." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "La dorsale protège la colonne vertébrale lors d'un choc ou d'une chute (A). Le confort thermique (B) n'est pas son rôle.",
+      "difficulte": 1
+    },
+    {
+      "id": "EQP-0018",
+      "theme": "equipements",
+      "enonce": "Pour être mieux vu des autres usagers, je privilégie :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Un équipement clair ou doté d'éléments rétroréfléchissants." },
+        { "id": "b", "texte": "Un équipement entièrement sombre." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Des couleurs claires et des éléments rétroréfléchissants augmentent fortement la visibilité, surtout de nuit (A). Le tout-sombre (B) rend le motard difficile à voir.",
+      "difficulte": 1
+    },
+    {
+      "id": "EQP-0019",
+      "theme": "equipements",
+      "enonce": "Un gilet ou blouson airbag moto :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Se déclenche en cas de chute pour protéger le tronc et le cou." },
+        { "id": "b", "texte": "Remplace le port du casque." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "L'airbag se gonfle lors d'une chute pour protéger thorax, dos et cervicales (A). Il complète l'équipement mais ne remplace pas le casque (B faux), qui reste obligatoire.",
+      "difficulte": 2
+    },
+    {
+      "id": "EQP-0020",
+      "theme": "equipements",
+      "enonce": "Le port de gants certifiés (CE) est obligatoire :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Pour le conducteur." },
+        { "id": "b", "texte": "Pour le passager également." },
+        { "id": "c", "texte": "Pour personne." }
+      ],
+      "bonnesReponses": ["a", "b"],
+      "explication": "Les gants certifiés sont obligatoires pour le conducteur ET le passager (A, B). En leur absence, amende et retrait de point. Dire qu'ils ne le sont pour personne (C) est faux.",
+      "difficulte": 2
+    },
+    {
+      "id": "SEC-0011",
+      "theme": "secours",
+      "enonce": "Face à un accident, la conduite à tenir tient en trois mots :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Protéger." },
+        { "id": "b", "texte": "Alerter." },
+        { "id": "c", "texte": "Secourir." },
+        { "id": "d", "texte": "Filmer la scène." }
+      ],
+      "bonnesReponses": ["a", "b", "c"],
+      "explication": "La règle est Protéger, Alerter, Secourir (A, B, C) : on sécurise la zone, on prévient les secours, puis on porte assistance. Filmer (D) fait perdre un temps vital et est déplacé.",
+      "difficulte": 2
+    },
+    {
+      "id": "SEC-0012",
+      "theme": "secours",
+      "enonce": "Quels numéros permettent d'alerter les secours ?",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Le 112 (numéro d'urgence européen)." },
+        { "id": "b", "texte": "Le 18 (pompiers)." },
+        { "id": "c", "texte": "Le 15 (SAMU)." },
+        { "id": "d", "texte": "Le 3949." }
+      ],
+      "bonnesReponses": ["a", "b", "c"],
+      "explication": "Le 112 (A), le 18 (B) et le 15 (C) joignent les secours. Le 3949 (D) est un service d'emploi, sans rapport avec l'urgence.",
+      "difficulte": 1
+    },
+    {
+      "id": "SEC-0013",
+      "theme": "secours",
+      "enonce": "Avant de porter secours, je protège d'abord la zone (gilet, feux de détresse, baliser) pour éviter un suraccident :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "« Protéger » est la première étape (A) : se signaler et baliser évite un suraccident qui ferait d'autres victimes. Se précipiter sans sécuriser (B) est dangereux.",
+      "difficulte": 1
+    },
+    {
+      "id": "SEC-0014",
+      "theme": "secours",
+      "enonce": "Je déplace systématiquement la victime pour la mettre sur le côté :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui, toujours." },
+        { "id": "b", "texte": "Non, sauf danger immédiat (incendie, sur-accident)." }
+      ],
+      "bonnesReponses": ["b"],
+      "explication": "On ne déplace pas une victime sauf danger imminent (B) : un mouvement peut aggraver une fracture ou une lésion de la colonne. On la déplace seulement si elle court un danger immédiat. La déplacer systématiquement (A) est une erreur.",
+      "difficulte": 2
+    },
+    {
+      "id": "SEC-0015",
+      "theme": "secours",
+      "enonce": "Si le retrait du casque est vraiment nécessaire (victime ne respirant plus), il se fait idéalement :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "À deux, en maintenant la tête et le cou dans l'axe." },
+        { "id": "b", "texte": "Seul, en tirant rapidement." }
+      ],
+      "bonnesReponses": ["a"],
+      "explication": "Le retrait, réservé aux cas vitaux, se fait idéalement à deux en maintenant tête et cou alignés (A) pour limiter le risque pour la colonne. Tirer seul et vite (B) est dangereux.",
+      "difficulte": 3
+    },
+    {
+      "id": "SEC-0016",
+      "theme": "secours",
+      "enonce": "Pour réconforter un blessé, je lui donne à boire :",
+      "media": null,
+      "propositions": [
+        { "id": "a", "texte": "Oui." },
+        { "id": "b", "texte": "Non." }
+      ],
+      "bonnesReponses": ["b"],
+      "explication": "On ne donne ni à boire ni à manger à un blessé (B) : cela peut provoquer un étouffement et compliquer une éventuelle opération. On le rassure et on le couvre en attendant les secours.",
       "difficulte": 1
     }
 
