@@ -1,5 +1,15 @@
-# Crédits images (photos sous licence libre)
+# Crédits & sources
 
+## Source des questions (banque verbatim)
+Les questions de la banque (`questions.js`) sont **reprises telles quelles** de :
+- **Ebook « ETM 2026 »** — © 2026 **TestPermis.fr** (Formation Permis Moto), www.testpermis.fr. Fichier : `ebook_moto_1781723509.pdf`.
+
+Chaque question rappelle sa section d'origine dans son champ `explication`. Réutilisation à des fins d'entraînement personnel ; les droits sur les questions et illustrations d'origine appartiennent à TestPermis.fr.
+
+## Illustrations issues de l'ebook
+Les images `images-doc/` (préfixe `img-`) sont extraites de l'ebook ETM 2026 de TestPermis.fr (même source que ci-dessus).
+
+## Photos sous licence libre (Wikimedia Commons)
 Photos issues de Wikimedia Commons, réutilisées selon leur licence (auteur + licence + lien).
 Modifications éventuelles : recadrage/redimensionnement pour l'affichage.
 

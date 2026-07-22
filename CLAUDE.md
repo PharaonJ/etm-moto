@@ -23,24 +23,23 @@ Utilisateur **débutant en code** : expliquer simplement, jamais de code brut sa
 - 9 thèmes (clés sans accent) : `signalisation, conducteur, route, usagers, mecanique, equipements, documents, secours, environnement`. Sur-pondérer mécanique / équipements / secours.
 - **Images** : champ `media` d'une question = URL ou data-URI (sinon `null`). Sources acceptées : (1) **photos des documents fournis par l'utilisateur** — reprises telles quelles, source citée dans `CREDITS.md` si copyright ; (2) panneaux = SVG dessinés ou Wikimedia Commons ; (3) schémas = SVG ; (4) photos de banques libres. Pour toute image sous copyright, **la source est obligatoire** dans `CREDITS.md`.
 
-## État (mis à jour le 2026-07-22)
-- **727 questions**, 0 erreur de format. Validateur : `node validate.js` (dans ce dossier). Objectif : ~3000.
-- **Lot ebook ETM 2026 TERMINÉ** : les 72 sous-sections (cours + QCM + corrigé) de l'ebook (78 p., `~/Downloads/ebook_moto_1781723509.pdf`) ont été intégrées. ⚠️ **Ce lot n'est pas encore commité** (dernier commit git = « 162 questions » ; le travail 162→727 est dans le working tree).
-- Par thème actuel : signalisation 99, conducteur 95, route 104, usagers 49, mecanique 111, equipements 80, documents 31, secours 97, environnement 61. Restent sous-représentés : **documents (31), usagers (49)**.
-- **Visuels** : **209 questions illustrées** (`media` non-null), 518 encore en `media:null`. Le 2026-07-22, +89 câblées sur les images DÉJÀ présentes (aucune nouvelle image créée). Le reste des `media:null` est surtout des questions purement textuelles (alcool, documents, règles) qui n'ont pas besoin d'image, + quelques panneaux/schémas qui manquent encore côté `images/`.
-- **Nouvel écran « Conseils & méthode »** (accueil) : format de l'ETM (40 q, 35/40), méthode de réponse, jour J. Fonction `showConseils()` dans `index.html`.
-- Sauvegarde de l'ancien fichier avant fusion : **`questions.js.bak`** (293 q).
-- **120 questions illustrées** : panneaux + schémas pédagogiques dessinés en SVG (`images/*.svg`), et photos réelles sous licence libre (Wikimedia Commons, `images/photo-*.jpg` + autres) — crédits obligatoires dans `CREDITS.md`. 51 fichiers dans `images/`.
-- **`galerie.html`** : page « coulisses » qui liste toutes les questions illustrées (image + bonnes réponses). Ouvrir au double-clic, ou via le serveur local, ou en ligne `/galerie.html`.
+## État (mis à jour le 2026-07-22 — BASCULE VERBATIM)
+- **450 questions REPRISES TELLES QUELLES de l'ebook ETM 2026 (TestPermis.fr)**, 0 erreur de format. Validateur : `node validate.js`. Objectif : ~3000.
+- **Refonte du 2026-07-22** : l'utilisateur a demandé la banque **verbatim** du document (les vraies questions + leurs images), pas des reformulations. L'ancienne banque reformulée (727 q) a été **archivée** dans `questions.reformule-727.bak.js`. La nouvelle `questions.js` = les 450 QCM de l'ebook, extraits verbatim (énoncés + options + bonne réponse du corrigé), source citée dans chaque `explication` et dans `CREDITS.md`.
+- Méthode d'extraction (reproductible) : `pdftotext` de `~/Downloads/ebook_moto_1781723509.pdf` → découpage en 72 sections (marqueurs « REPONSES - <titre> ») → extraction par sous-agents Sonnet (scratchpad `out/b*.json`) → assemblage `assemble.js` (thème depuis titre section via `themes.json`). Scripts dans le scratchpad de session.
+- Par thème : signalisation 57, conducteur 50, route 80, usagers 47, mecanique 30, equipements 45, documents 5, secours 86, environnement 50.
+- **Complétude** : 450 extraites = 450 énoncés `Qn` du document (comptage indépendant). Le document a 462 lignes de corrigé (12 de plus = doublons de grille de réponses probables). Les questions verbatim sont **majoritairement à réponse unique** (c'est ainsi dans le document).
+- **Visuels** : ⚠️ **toutes à `media:null` pour l'instant**. Les **97 images du document** sont extraites dans `images-doc/` (`img-<page>-<idx>.jpg`) mais **pas encore câblées** — association fiable = passe vision (voir Reste à faire).
+- **Nouvel écran « Conseils & méthode »** (accueil) : fonction `showConseils()` dans `index.html`.
 - Méthode photos — 2 voies :
   1. **Photos des documents fournis** : les extraire du document (PDF/images) fourni par l'utilisateur, les déposer dans `images/`, câbler `media`, et **citer la source** (document + page) dans `CREDITS.md` si copyright.
   2. **Banques libres** (Wikimedia Commons) : API Commons via `curl` + User-Agent (le SSL de Python échoue ici) → ne garder que CC/PD (exclure svg/webm/pdf) → télécharger le thumb 900px → vérifier `file` que c'est bien une image → crédit auteur+licence+lien dans `CREDITS.md`.
 - App **compatible images** (le champ `media` = chemin relatif `images/...` ou `null`).
 
 ## Reste à faire
-- **Commiter le lot ebook** (working tree 162→727 non commité) — à faire quand l'utilisateur le demande.
-- **Visuels** : câbler `media` sur les 607 questions en `media:null` — avec (a) les photos des documents fournis par l'utilisateur si présentes (source dans `CREDITS.md`), sinon (b) des SVG (panneaux/schémas) et photos libres.
-- **Nouveaux lots de questions** (vers l'objectif ~3000) : intégrer les questions/photos des documents que l'utilisateur fournit — reprises telles quelles, source citée si copyright. Rééquilibrer vers **documents** et **usagers** (sous-représentés).
+- **Câbler les images du document** : associer les 97 `images-doc/img-*.jpg` aux bonnes questions. L'association automatique (texte/géométrie) s'est révélée peu fiable ; faire une **passe vision** (sous-agents Sonnet lisant les pages PDF par section, liant chaque image à la question qu'elle illustre). Copier les images retenues dans `images/` et renseigner `media`.
+- **Pousser en ligne** : `git push` pour mettre à jour https://pharaonj.github.io/etm-moto/ (remplace toute la banque affichée — à confirmer avec l'utilisateur car changement visible majeur).
+- **Nouveaux lots** (vers ~3000) : intégrer les questions/photos des prochains documents fournis, verbatim + source.
 
 ## Reprendre dans une nouvelle conversation
 Dire simplement : « **On reprend le simulateur ETM, dossier ~/Documents/ETM-Simulateur** ». Claude relit ce fichier + sa mémoire, et continue exactement où on en était.
