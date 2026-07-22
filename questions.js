@@ -57,7 +57,7 @@ window.ETM_BANK = {
       "id": "SIG-0001",
       "theme": "signalisation",
       "enonce": "Quelle signification indique un panneau rond à bord rouge avec un bord blanc et une barre oblique rouge du coin supérieur gauche au coin inférieur droit ?",
-      "media": null,
+      "media": "images-doc/img-007-010.jpg",
       "propositions": [
         { "id": "a", "texte": "Interdiction formelle" },
         { "id": "b", "texte": "Attention danger" },
@@ -72,7 +72,7 @@ window.ETM_BANK = {
       "id": "SIG-0002",
       "theme": "signalisation",
       "enonce": "Que signifie un feu tricolore passant au rouge ?",
-      "media": null,
+      "media": "images-doc/img-008-011.jpg",
       "propositions": [
         { "id": "a", "texte": "Accélérer" },
         { "id": "b", "texte": "Ralentir" },
@@ -87,7 +87,7 @@ window.ETM_BANK = {
       "id": "SIG-0003",
       "theme": "signalisation",
       "enonce": "Qu'indique un panneau bleu avec des pictogrammes blancs représentant des services disponibles sur une aire d'autoroute ?",
-      "media": null,
+      "media": "images-doc/img-008-012.jpg",
       "propositions": [
         { "id": "a", "texte": "Aire de repos à 1 km" },
         { "id": "b", "texte": "Hôpital proche" },
@@ -102,7 +102,7 @@ window.ETM_BANK = {
       "id": "SIG-0004",
       "theme": "signalisation",
       "enonce": "Que signifie un marquage au sol constitué de zigzag jaune près d'un passage piéton ?",
-      "media": null,
+      "media": "images-doc/img-009-013.jpg",
       "propositions": [
         { "id": "a", "texte": "Stationnement autorisé" },
         { "id": "b", "texte": "Ralentir pour les piétons" },
@@ -117,7 +117,7 @@ window.ETM_BANK = {
       "id": "SIG-0005",
       "theme": "signalisation",
       "enonce": "Quelle indication donne un panneau carré bleu avec un pictogramme blanc représentant une station-service ?",
-      "media": null,
+      "media": "images-doc/img-009-014.jpg",
       "propositions": [
         { "id": "a", "texte": "Déviation obligatoire" },
         { "id": "b", "texte": "Restauration rapide" },
@@ -335,7 +335,7 @@ window.ETM_BANK = {
       "id": "SIG-0021",
       "theme": "signalisation",
       "enonce": "Quelle est la règle générale de priorité en France ?",
-      "media": null,
+      "media": "images-doc/img-017-021.jpg",
       "propositions": [
         { "id": "a", "texte": "Priorité à droite" },
         { "id": "b", "texte": "Priorité à gauche" }
@@ -348,7 +348,7 @@ window.ETM_BANK = {
       "id": "SIG-0022",
       "theme": "signalisation",
       "enonce": "Que signifie le panneau 'Cédez le passage' ?",
-      "media": null,
+      "media": "images-doc/img-017-022.jpg",
       "propositions": [
         { "id": "a", "texte": "Vous devez céder le passage aux véhicules venant de votre gauche et de votre droite" },
         { "id": "b", "texte": "Vous devez marquer un arrêt complet" }
@@ -361,7 +361,7 @@ window.ETM_BANK = {
       "id": "SIG-0023",
       "theme": "signalisation",
       "enonce": "Que devez-vous faire en arrivant à un 'Stop' ?",
-      "media": null,
+      "media": "images-doc/img-017-023.jpg",
       "propositions": [
         { "id": "a", "texte": "Marquer un arrêt complet et céder le passage" },
         { "id": "b", "texte": "Marquer un ralentissement et céder le passage" },
@@ -375,7 +375,7 @@ window.ETM_BANK = {
       "id": "SIG-0024",
       "theme": "signalisation",
       "enonce": "Comment fonctionnent les règles de priorité dans un giratoire ?",
-      "media": null,
+      "media": "images-doc/img-018-024.jpg",
       "propositions": [
         { "id": "a", "texte": "Vous cédez le passage aux véhicules venant de votre gauche" },
         { "id": "b", "texte": "Vous cédez le passage aux véhicules venant de votre droite" },
@@ -389,7 +389,7 @@ window.ETM_BANK = {
       "id": "SIG-0025",
       "theme": "signalisation",
       "enonce": "Pourquoi les motards doivent-ils être particulièrement vigilants aux règles de priorité ?",
-      "media": null,
+      "media": "images-doc/img-018-025.jpg",
       "propositions": [
         { "id": "a", "texte": "Parce que leur petite taille peut les rendre moins visibles" },
         { "id": "b", "texte": "Parce qu'ils peuvent toujours se faufiler entre les voitures" },
@@ -710,7 +710,7 @@ window.ETM_BANK = {
       "id": "SIG-0043",
       "theme": "signalisation",
       "enonce": "Quel panneau indique l'interdiction de stationner ?",
-      "media": null,
+      "media": "images-doc/img-029-032.jpg",
       "propositions": [
         { "id": "a", "texte": "Panneau rond rouge barré d'un trait noir" },
         { "id": "b", "texte": "Panneau rond rouge barré de deux traits noirs" }
@@ -776,7 +776,7 @@ window.ETM_BANK = {
       "id": "SIG-0048",
       "theme": "signalisation",
       "enonce": "Quelle est la première chose à vérifier avant de dépasser un autre véhicule ?",
-      "media": null,
+      "media": "images-doc/img-031-033.jpg",
       "propositions": [
         { "id": "a", "texte": "Vérifier la circulation en sens inverse." },
         { "id": "b", "texte": "Commencer à déboîter." }
@@ -1738,7 +1738,7 @@ window.ETM_BANK = {
       "id": "CND-0031",
       "theme": "conducteur",
       "enonce": "Quel est le taux maximum d'alcoolémie autorisé pour les conducteurs en France ?",
-      "media": null,
+      "media": "images-doc/img-053-036.jpg",
       "propositions": [
         { "id": "a", "texte": "0,2 g/L" },
         { "id": "b", "texte": "0,5 g/L" },
@@ -1884,7 +1884,7 @@ window.ETM_BANK = {
       "id": "USG-0006",
       "theme": "usagers",
       "enonce": "Quelle est la priorité du conducteur de moto à l'approche d'un passage piéton?",
-      "media": null,
+      "media": "images-doc/img-057-038.jpg",
       "propositions": [
         { "id": "a", "texte": "Céder le passage aux piétons." },
         { "id": "b", "texte": "Continuer à la même vitesse." }
@@ -2123,7 +2123,7 @@ window.ETM_BANK = {
       "id": "USG-0023",
       "theme": "usagers",
       "enonce": "Que devez-vous faire en tant que motocycliste lorsque vous entendez une sirène et voyez des gyrophares dans votre rétroviseur ?",
-      "media": null,
+      "media": "images-doc/img-064-041.jpg",
       "propositions": [
         { "id": "a", "texte": "Continuer à rouler et ne pas s'arrêter" },
         { "id": "b", "texte": "Céder le passage immédiatement et, si nécessaire, s'arrêter sur le bas-côté" },
@@ -2299,7 +2299,7 @@ window.ETM_BANK = {
       "id": "USG-0036",
       "theme": "usagers",
       "enonce": "Quel geste manuel pouvez-vous utiliser pour indiquer un tournant à gauche si vos clignotants ne sont pas visibles?",
-      "media": null,
+      "media": "images-doc/img-067-043.jpg",
       "propositions": [
         { "id": "a", "texte": "Lever la main gauche." },
         { "id": "b", "texte": "Secouer la main gauche." }
@@ -3911,7 +3911,7 @@ window.ETM_BANK = {
       "id": "EQP-0041",
       "theme": "equipements",
       "enonce": "Quel est le principal avantage d'un gilet airbag pour les motards ?",
-      "media": null,
+      "media": "images-doc/img-117-061.jpg",
       "propositions": [
         { "id": "a", "texte": "Il protège contre les intempéries." },
         { "id": "b", "texte": "Il se gonfle automatiquement en cas de chute pour protéger le torse et les organes vitaux." }
@@ -3980,7 +3980,7 @@ window.ETM_BANK = {
       "id": "ENV-0001",
       "theme": "environnement",
       "enonce": "Quels éléments naturels peuvent affecter la conduite d'une moto ?",
-      "media": null,
+      "media": "images-doc/img-120-063.jpg",
       "propositions": [
         { "id": "a", "texte": "Conditions météorologiques, topographie, faune" },
         { "id": "b", "texte": "Uniquement les conditions météorologiques" },
@@ -4658,7 +4658,7 @@ window.ETM_BANK = {
       "id": "SEC-0001",
       "theme": "secours",
       "enonce": "Quel est le premier réflexe à avoir en arrivant sur le lieu d'un accident?",
-      "media": null,
+      "media": "images-doc/img-142-067.jpg",
       "propositions": [
         { "id": "a", "texte": "Analyser l'environnement" },
         { "id": "b", "texte": "Aller directement aux blessés" },
@@ -4781,7 +4781,7 @@ window.ETM_BANK = {
       "id": "SEC-0010",
       "theme": "secours",
       "enonce": "Quel numéro d'urgence devez-vous composer en priorité en Europe en cas d'accident?",
-      "media": null,
+      "media": "images-doc/img-146-071.jpg",
       "propositions": [
         { "id": "a", "texte": "112" },
         { "id": "b", "texte": "911" },
@@ -5025,7 +5025,7 @@ window.ETM_BANK = {
       "id": "SEC-0027",
       "theme": "secours",
       "enonce": "Quels sont les types de bandages les plus couramment utilisés en premiers secours?",
-      "media": null,
+      "media": "images-doc/img-150-072.jpg",
       "propositions": [
         { "id": "a", "texte": "Bandes de gaze, bandes élastiques, pansements adhésifs" },
         { "id": "b", "texte": "Bandes de caoutchouc, pansements liquides, compresses de froid" },
@@ -6075,7 +6075,7 @@ window.ETM_BANK = {
       "id": "RTE-0066",
       "theme": "route",
       "enonce": "Pourquoi les intersections sont-elles particulièrement dangereuses pour les motocyclistes ?",
-      "media": null,
+      "media": "images-doc/img-181-090.jpg",
       "propositions": [
         { "id": "a", "texte": "Parce qu'il y a plus de voies de circulation." },
         { "id": "b", "texte": "Parce que la visibilité est toujours claire." }
@@ -6210,7 +6210,7 @@ window.ETM_BANK = {
       "id": "RTE-0076",
       "theme": "route",
       "enonce": "Quelle est la première chose à faire en cas de pluie pour conduire sécuritairement une moto ?",
-      "media": null,
+      "media": "images-doc/img-186-096.jpg",
       "propositions": [
         { "id": "a", "texte": "Réduire votre vitesse." },
         { "id": "b", "texte": "Augmenter votre vitesse." },

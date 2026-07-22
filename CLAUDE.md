@@ -29,7 +29,7 @@ Utilisateur **débutant en code** : expliquer simplement, jamais de code brut sa
 - Méthode d'extraction (reproductible) : `pdftotext` de `~/Downloads/ebook_moto_1781723509.pdf` → découpage en 72 sections (marqueurs « REPONSES - <titre> ») → extraction par sous-agents Sonnet (scratchpad `out/b*.json`) → assemblage `assemble.js` (thème depuis titre section via `themes.json`). Scripts dans le scratchpad de session.
 - Par thème : signalisation 57, conducteur 50, route 80, usagers 47, mecanique 30, equipements 45, documents 5, secours 86, environnement 50.
 - **Complétude** : 450 extraites = 450 énoncés `Qn` du document (comptage indépendant). Le document a 462 lignes de corrigé (12 de plus = doublons de grille de réponses probables). Les questions verbatim sont **majoritairement à réponse unique** (c'est ainsi dans le document).
-- **Visuels** : ⚠️ **toutes à `media:null` pour l'instant**. Les **97 images du document** sont extraites dans `images-doc/` (`img-<page>-<idx>.jpg`) mais **pas encore câblées** — association fiable = passe vision (voir Reste à faire).
+- **Visuels** : **23 questions illustrées** avec les images DU DOCUMENT (`images-doc/img-<page>-<idx>.jpg`), câblées par passe vision (sous-agents Sonnet lisant les pages PDF). Les 97 images sont extraites dans `images-doc/`, mais seules ~23 sont de vraies illustrations de question (panneaux/photos sous l'énoncé) ; les autres sont des illustrations de cours décoratives (non câblées). Ex. vérifié : Q5 signalisation station-service → `img-009-014.jpg` (identique à la capture utilisateur).
 - **Nouvel écran « Conseils & méthode »** (accueil) : fonction `showConseils()` dans `index.html`.
 - Méthode photos — 2 voies :
   1. **Photos des documents fournis** : les extraire du document (PDF/images) fourni par l'utilisateur, les déposer dans `images/`, câbler `media`, et **citer la source** (document + page) dans `CREDITS.md` si copyright.
@@ -37,8 +37,8 @@ Utilisateur **débutant en code** : expliquer simplement, jamais de code brut sa
 - App **compatible images** (le champ `media` = chemin relatif `images/...` ou `null`).
 
 ## Reste à faire
-- **Câbler les images du document** : associer les 97 `images-doc/img-*.jpg` aux bonnes questions. L'association automatique (texte/géométrie) s'est révélée peu fiable ; faire une **passe vision** (sous-agents Sonnet lisant les pages PDF par section, liant chaque image à la question qu'elle illustre). Copier les images retenues dans `images/` et renseigner `media`.
 - **Pousser en ligne** : `git push` pour mettre à jour https://pharaonj.github.io/etm-moto/ (remplace toute la banque affichée — à confirmer avec l'utilisateur car changement visible majeur).
+- **(optionnel) Réponses manquantes** : quelques questions du document sont à réponse unique héritée du corrigé ; si un corrigé était ambigu, revérifier ponctuellement.
 - **Nouveaux lots** (vers ~3000) : intégrer les questions/photos des prochains documents fournis, verbatim + source.
 
 ## Reprendre dans une nouvelle conversation
