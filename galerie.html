@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galerie des questions illustrées — ETM</title>
+  <style>
+    body { font-family: -apple-system, Arial, sans-serif; margin: 0; background: #f4f6f8; color: #1b1f24; }
+    header { background: #11151a; color: #fff; padding: 18px 20px; }
+    header h1 { margin: 0; font-size: 20px; }
+    header p { margin: 6px 0 0; color: #9aa3ab; font-size: 14px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; padding: 20px; }
+    .card { background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.08); overflow: hidden; display: flex; flex-direction: column; }
+    .imgwrap { background: #e9eef2; display: flex; align-items: center; justify-content: center; height: 190px; }
+    .imgwrap img { max-width: 100%; max-height: 190px; object-fit: contain; }
+    .body { padding: 12px 14px 16px; }
+    .id { font-size: 11px; color: #8a939c; letter-spacing: .5px; }
+    .q { font-size: 14px; font-weight: 600; margin: 4px 0 8px; }
+    .ans { font-size: 13px; margin: 3px 0; padding-left: 18px; position: relative; }
+    .ans.good::before { content: "✓"; color: #1e9e54; position: absolute; left: 0; font-weight: bold; }
+    .ans.bad::before { content: "·"; color: #b0b7bd; position: absolute; left: 4px; }
+    .badge { display:inline-block; font-size:11px; background:#eef2f5; color:#56606a; border-radius:20px; padding:2px 9px; margin-top:8px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Galerie des questions illustrées</h1>
+    <p id="count">Chargement…</p>
+  </header>
+  <div class="grid" id="grid"></div>
+
+  <script src="questions.js"></script>
+  <script>
+    const bank = window.ETM_BANK;
+    const illus = bank.questions.filter(q => q.media);
+    document.getElementById('count').textContent =
+      illus.length + " questions illustrées sur " + bank.questions.length + " au total";
+    const grid = document.getElementById('grid');
+    illus.forEach(q => {
+      const good = new Set(q.bonnesReponses);
+      const card = document.createElement('div');
+      card.className = 'card';
+      const isPhoto = /\.(jpg|jpeg|png)$/i.test(q.media);
+      card.innerHTML = `
+        <div class="imgwrap"><img src="${q.media}" alt=""></div>
+        <div class="body">
+          <div class="id">${q.id}${isPhoto ? ' · PHOTO' : ' · SCHÉMA/PANNEAU'}</div>
+          <div class="q">${q.enonce}</div>
+          ${q.propositions.map(p =>
+            `<div class="ans ${good.has(p.id) ? 'good' : 'bad'}">${p.texte}</div>`).join('')}
+          <span class="badge">${q.bonnesReponses.length > 1 ? 'Plusieurs réponses' : 'Une réponse'}</span>
+        </div>`;
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+</html>

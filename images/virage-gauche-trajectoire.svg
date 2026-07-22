@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" width="320" height="213">
+  <rect x="0" y="0" width="240" height="160" fill="#e8efe6"/>
+  <!-- route en courbe à gauche -->
+  <path d="M70,160 L70,90 Q70,40 130,40 L240,40 L240,90 L150,90 Q120,90 120,120 L120,160 Z" fill="#9aa3ab"/>
+  <!-- ligne axiale -->
+  <path d="M95,160 Q95,65 150,65 L240,65" fill="none" stroke="white" stroke-width="2" stroke-dasharray="12 9"/>
+  <!-- trajectoire de sécurité (extérieur -> intérieur -> extérieur) -->
+  <path d="M82,158 Q82,78 135,78 Q175,78 240,52" fill="none" stroke="#2c7be5" stroke-width="3.5" stroke-dasharray="2 0"/>
+  <circle cx="82" cy="150" r="4" fill="#2c7be5"/>
+  <polygon points="232,48 244,52 234,58" fill="#2c7be5"/>
+  <text x="120" y="150" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#2c7be5" text-anchor="middle">Trajectoire de sécurité</text>
+</svg>

@@ -131,6 +131,13 @@
     .explain .verdict{font-weight:700;margin-bottom:6px}
     .explain p{margin:0}
 
+    /* ---- Conseils & méthode ---- */
+    .card + .card{margin-top:12px}
+    ul.tips{margin:6px 0 0;padding-left:20px}
+    ul.tips li{margin:0 0 10px;font-size:15px;line-height:1.45}
+    ul.tips li:last-child{margin-bottom:0}
+    ul.tips strong{color:var(--ink)}
+
     .actions{display:flex;gap:10px;margin-top:18px}
     .actions .btn{flex:1}
 
@@ -296,12 +303,57 @@
           '<button class="tile" id="m-theme"><span class="tt">Entraînement par thème</span><span class="td">Série de 10 ou 20, correction immédiate</span></button>' +
           '<button class="tile" id="m-err"><span class="tt">Réviser mes erreurs</span><span class="td">'+nbErr+' question(s) à retravailler</span></button>' +
           '<button class="tile" id="m-dash"><span class="tt">Tableau de bord</span><span class="td">Ma progression et mes points faibles</span></button>' +
+          '<button class="tile" id="m-tips"><span class="tt">Conseils &amp; méthode</span><span class="td">Réussir l\'ETM : format, pièges, jour J</span></button>' +
         '</div>' +
       '</section>';
     document.getElementById("m-exam").onclick = startExam;
     document.getElementById("m-theme").onclick = showThemePicker;
     document.getElementById("m-err").onclick = startErreurs;
     document.getElementById("m-dash").onclick = showDashboard;
+    document.getElementById("m-tips").onclick = showConseils;
+  }
+
+  /* =========================================================
+     ÉCRAN : CONSEILS & MÉTHODE (format de l'examen + jour J)
+  ========================================================= */
+  function showConseils(){
+    if(session && session.timerId){ clearInterval(session.timerId); }
+    session = null;
+    view.innerHTML =
+      '<section>' +
+        '<button class="link" id="back">← Accueil</button>' +
+        '<h2>Conseils &amp; méthode</h2>' +
+        '<div class="card">' +
+          '<h3>Le format de l\'épreuve</h3>' +
+          '<ul class="tips">' +
+            '<li><strong>40 questions</strong> à réponses par choix multiples. Il faut au moins <strong>35 bonnes réponses sur 40</strong> pour réussir.</li>' +
+            '<li>Chaque question indique <strong>« Une réponse »</strong> ou <strong>« Plusieurs réponses »</strong> (format depuis sept. 2023).</li>' +
+            '<li>Sur une question à plusieurs réponses, il faut cocher <strong>toutes</strong> les bonnes : une réponse incomplète compte comme <strong>fausse</strong> (0 point).</li>' +
+            '<li>L\'ETM couvre 9 thématiques : signalisation, conducteur, route, autres usagers, mécanique, équipements, documents, premiers secours, environnement.</li>' +
+          '</ul>' +
+        '</div>' +
+        '<div class="card">' +
+          '<h3>Ma méthode pour répondre</h3>' +
+          '<ul class="tips">' +
+            '<li><strong>Lis toute la question</strong> et <strong>chaque proposition</strong> jusqu\'au bout avant de valider : un seul mot (« toujours », « jamais », « sauf ») change la réponse.</li>' +
+            '<li>Regarde d\'abord l\'indication <em>Une / Plusieurs réponses</em> : elle te dit combien de cases chercher.</li>' +
+            '<li>Élimine les propositions clairement fausses, puis tranche entre celles qui restent.</li>' +
+            '<li>Dans le doute, pense <strong>sécurité</strong> : la bonne réponse est presque toujours celle qui protège le mieux toi et les autres.</li>' +
+            '<li>Ne reste pas bloqué : gère ton temps, avance, tu peux revenir en révisant tes erreurs.</li>' +
+          '</ul>' +
+        '</div>' +
+        '<div class="card">' +
+          '<h3>Le jour J</h3>' +
+          '<ul class="tips">' +
+            '<li>Arrive en avance, muni d\'une <strong>pièce d\'identité valide</strong> et de ta convocation.</li>' +
+            '<li>Reste <strong>calme et concentré</strong> : l\'objectif de l\'ETM est de vérifier ta capacité à rouler en sécurité, pas de te piéger.</li>' +
+            '<li>Entraîne-toi régulièrement en <em>examen blanc</em> ici pour être à l\'aise avec le rythme et le format.</li>' +
+          '</ul>' +
+        '</div>' +
+        '<div class="actions"><button class="btn primary" id="go-exam">Faire un examen blanc</button></div>' +
+      '</section>';
+    document.getElementById("back").onclick = showHome;
+    document.getElementById("go-exam").onclick = startExam;
   }
 
   /* =========================================================

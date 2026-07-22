@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" width="320" height="213">
+  <rect x="0" y="0" width="240" height="160" fill="#eef2f5"/>
+  <rect x="0" y="55" width="240" height="60" fill="#9aa3ab"/>
+  <line x1="0" y1="85" x2="240" y2="85" stroke="#fff" stroke-width="2" stroke-dasharray="14 10"/>
+  <!-- véhicule devant -->
+  <rect x="30" y="66" width="52" height="34" rx="7" fill="#fff" stroke="#333" stroke-width="2"/>
+  <rect x="60" y="71" width="16" height="24" rx="2" fill="#bcd4e6"/>
+  <!-- moto derrière -->
+  <circle cx="160" cy="100" r="8" fill="#222"/><circle cx="188" cy="100" r="8" fill="#222"/>
+  <rect x="162" y="86" width="24" height="12" rx="4" fill="#2c7be5"/>
+  <!-- intervalle -->
+  <line x1="86" y1="128" x2="150" y2="128" stroke="#e67e22" stroke-width="3"/>
+  <line x1="86" y1="122" x2="86" y2="134" stroke="#e67e22" stroke-width="3"/>
+  <line x1="150" y1="122" x2="150" y2="134" stroke="#e67e22" stroke-width="3"/>
+  <text x="118" y="150" font-family="Arial,sans-serif" font-size="15" font-weight="bold" fill="#e67e22" text-anchor="middle">≈ 2 secondes</text>
+  <text x="120" y="20" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#16191d" text-anchor="middle">DISTANCE DE SÉCURITÉ</text>
+</svg>

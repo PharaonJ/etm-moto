@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" width="320" height="213">
+  <rect x="0" y="0" width="240" height="160" fill="#eef2f5"/>
+  <!-- casque intégral -->
+  <path d="M60 96 a56 56 0 0 1 112 0 v14 a8 8 0 0 1 -8 8 h-18 v-10 h-60 v10 h-18 a8 8 0 0 1 -8 -8 z" fill="#2c3e50"/>
+  <path d="M78 78 a40 40 0 0 1 80 0 v6 h-80 z" fill="#34495e"/>
+  <path d="M92 96 h74 v20 h-74 a6 6 0 0 1 -6 -6 v-8 a6 6 0 0 1 6 -6 z" fill="#bcd4e6" opacity="0.85"/>
+  <!-- étiquette homologation -->
+  <rect x="150" y="120" width="74" height="30" rx="5" fill="#1b7f4b"/>
+  <text x="187" y="133" font-family="Arial,sans-serif" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">Norme ECE</text>
+  <text x="187" y="145" font-family="Arial,sans-serif" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">22.06</text>
+  <text x="90" y="22" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#16191d" text-anchor="middle">CASQUE HOMOLOGUÉ</text>
+</svg>

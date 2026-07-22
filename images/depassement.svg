@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" width="320" height="213">
+  <rect x="0" y="0" width="240" height="160" fill="#eef2f5"/>
+  <rect x="0" y="55" width="240" height="60" fill="#9aa3ab"/>
+  <line x1="0" y1="85" x2="240" y2="85" stroke="#f1c40f" stroke-width="2" stroke-dasharray="16 12"/>
+  <!-- voiture dépassée -->
+  <rect x="70" y="90" width="52" height="20" rx="6" fill="#fff" stroke="#333" stroke-width="2"/>
+  <rect x="96" y="94" width="14" height="12" rx="2" fill="#bcd4e6"/>
+  <!-- moto qui déboîte et double -->
+  <circle cx="112" cy="72" r="6" fill="#222"/><circle cx="134" cy="72" r="6" fill="#222"/>
+  <rect x="114" y="60" width="20" height="10" rx="4" fill="#2c7be5"/>
+  <path d="M70 78 Q100 60 150 66" fill="none" stroke="#1b7f4b" stroke-width="3" stroke-dasharray="6 5" marker-end="url(#d)"/>
+  <defs><marker id="d" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#1b7f4b"/></marker></defs>
+  <text x="120" y="20" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#16191d" text-anchor="middle">DÉPASSEMENT</text>
+  <text x="120" y="150" font-family="Arial,sans-serif" font-size="11" fill="#5b6470" text-anchor="middle">se déporter largement, doubler franchement, se rabattre</text>
+</svg>

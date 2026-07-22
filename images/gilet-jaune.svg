@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="240" height="240">
+  <rect x="0" y="0" width="160" height="160" fill="#eef2f5"/>
+  <!-- gilet haute visibilité -->
+  <path d="M50 40 L110 40 L120 58 L104 66 L104 128 L56 128 L56 66 L40 58 Z" fill="#f1c40f" stroke="#c9a200" stroke-width="2"/>
+  <path d="M80 40 L80 128" stroke="#c9a200" stroke-width="1.5"/>
+  <!-- bandes rétroréfléchissantes -->
+  <rect x="56" y="86" width="48" height="9" fill="#dfe6ea" stroke="#9aa3ab" stroke-width="1"/>
+  <rect x="56" y="104" width="48" height="9" fill="#dfe6ea" stroke="#9aa3ab" stroke-width="1"/>
+  <rect x="66" y="66" width="9" height="47" fill="#dfe6ea" stroke="#9aa3ab" stroke-width="1"/>
+  <rect x="85" y="66" width="9" height="47" fill="#dfe6ea" stroke="#9aa3ab" stroke-width="1"/>
+  <text x="80" y="24" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#16191d" text-anchor="middle">GILET RÉFLÉCHISSANT</text>
+</svg>

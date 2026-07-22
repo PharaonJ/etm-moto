@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" width="320" height="213">
+  <rect x="0" y="0" width="240" height="160" fill="#eef2f5"/>
+  <text x="120" y="22" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#16191d" text-anchor="middle">NUMÉROS D'URGENCE</text>
+  <!-- 112 -->
+  <rect x="16" y="40" width="96" height="46" rx="8" fill="#c0392b"/>
+  <text x="64" y="64" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#fff" text-anchor="middle">112</text>
+  <text x="64" y="80" font-family="Arial,sans-serif" font-size="10" fill="#fff" text-anchor="middle">urgence européenne</text>
+  <!-- 15 -->
+  <rect x="128" y="40" width="44" height="46" rx="8" fill="#1b7f4b"/>
+  <text x="150" y="64" font-family="Arial,sans-serif" font-size="20" font-weight="bold" fill="#fff" text-anchor="middle">15</text>
+  <text x="150" y="80" font-family="Arial,sans-serif" font-size="9" fill="#fff" text-anchor="middle">SAMU</text>
+  <!-- 18 -->
+  <rect x="180" y="40" width="44" height="46" rx="8" fill="#e67e22"/>
+  <text x="202" y="64" font-family="Arial,sans-serif" font-size="20" font-weight="bold" fill="#fff" text-anchor="middle">18</text>
+  <text x="202" y="80" font-family="Arial,sans-serif" font-size="9" fill="#fff" text-anchor="middle">pompiers</text>
+  <!-- 114 -->
+  <rect x="60" y="100" width="120" height="40" rx="8" fill="#2c7be5"/>
+  <text x="120" y="122" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="#fff" text-anchor="middle">114</text>
+  <text x="120" y="135" font-family="Arial,sans-serif" font-size="9" fill="#fff" text-anchor="middle">sourds et malentendants (SMS)</text>
+</svg>
